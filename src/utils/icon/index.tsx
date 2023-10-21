@@ -3,8 +3,14 @@ import eye_outline from "@/assets/app-icon/eye-outline.svg";
 import eye_outline_off from "@/assets/app-icon/eye-outline-off.svg";
 import check from "@/assets/app-icon/check.svg";
 import arrow_left from "@/assets/app-icon/arrow-left.svg";
+import notifications from "@/assets/app-icon/notifications.svg";
 
 import Image from "next/image";
+
+interface PropIcon {
+  width: number;
+  height: number;
+}
 
 export const LoginIcon = () => (
   <Image priority src={login.src} alt="Login Icon" height={36} width={36} />
@@ -41,5 +47,15 @@ export const ArrowLeft = () => (
     alt="Arrow Left Icon"
     height={32}
     width={32}
+  />
+);
+
+export const NotificationsIcon = () => (
+  <Image
+    priority
+    src={notifications.src}
+    alt="Notification Icon"
+    height={24}
+    width={24}
   />
 );

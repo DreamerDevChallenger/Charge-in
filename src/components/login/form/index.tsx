@@ -1,4 +1,7 @@
+"use client";
+
 import styled, { keyframes } from "styled-components";
+
 import FormHeader from "./form-header";
 import FormContent from "./form-content";
 import FormFooter from "./form-footer";
