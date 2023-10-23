@@ -1,3 +1,4 @@
+import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
 import { NotificationsIcon } from "@/utils/icon";
 import styled from "styled-components";
@@ -5,7 +6,7 @@ import styled from "styled-components";
 export default function Notification() {
   return (
     <StyledNotification>
-      <NotificationsIcon />
+      <Icon Icon={NotificationsIcon} width={24} height={24} />
       <div className="number-notif">
         <Text>4</Text>
       </div>

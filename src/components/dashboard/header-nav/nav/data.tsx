@@ -1,11 +1,13 @@
-import home_outlined from "@/assets/app-icon/home-outline.svg";
-import shield from "@/assets/app-icon/shield-half.svg";
-import person_outlined from "@/assets/app-icon/person-outline.svg";
-import business_outlined from "@/assets/app-icon/business-outline.svg";
-import flash_outlined from "@/assets/app-icon/flash-outline.svg";
-import car_outlined from "@/assets/app-icon/car-outline.svg";
-import construct_outlined from "@/assets/app-icon/construct-outline.svg";
-import easel_outlined from "@/assets/app-icon/easel-outline.svg";
+import {
+  BusinessOutlinedIcon,
+  CarOutlinedIcon,
+  ConstructOutlinedIcon,
+  EaselOutlinedIcon,
+  FlashOutlinedIcon,
+  HomeOutlinedIon,
+  PersonOutlinedIcon,
+  ShieldIcon,
+} from "@/utils/icon";
 
 export const dataNav = [
   {
@@ -13,19 +15,19 @@ export const dataNav = [
     items: [
       {
         title: "Maisons",
-        icon_off: home_outlined,
+        icon_off: HomeOutlinedIon,
         dropdown: true,
         path: "/house",
       },
       {
         title: "Appartements",
-        icon_off: home_outlined,
+        icon_off: HomeOutlinedIon,
         dropdown: true,
         path: "/apartment",
       },
       {
         title: "Études",
-        icon_off: business_outlined,
+        icon_off: BusinessOutlinedIcon,
         dropdown: true,
         path: "/",
       },
@@ -34,48 +36,58 @@ export const dataNav = [
   {
     title: "utilisateurs",
     items: [
-      { title: "CEO & Admins", icon_off: shield, dropdown: false, path: "/" },
+      {
+        title: "CEO & Admins",
+        icon_off: ShieldIcon,
+        dropdown: false,
+        path: "/admin",
+      },
       {
         title: "Project Managers",
-        icon_off: person_outlined,
+        icon_off: PersonOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/manager",
       },
       {
         title: "Installateurs",
-        icon_off: person_outlined,
+        icon_off: PersonOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/installer",
       },
       {
         title: "Clients B2C",
-        icon_off: person_outlined,
+        icon_off: PersonOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/client",
       },
     ],
   },
   {
     title: "données",
     items: [
-      { title: "Bornes", icon_off: flash_outlined, dropdown: false, path: "/" },
+      {
+        title: "Bornes",
+        icon_off: FlashOutlinedIcon,
+        dropdown: false,
+        path: "/terminal",
+      },
       {
         title: "Véhicules",
-        icon_off: car_outlined,
+        icon_off: CarOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/car",
       },
       {
         title: "Accessoires",
-        icon_off: construct_outlined,
+        icon_off: ConstructOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/accessory",
       },
       {
         title: "Objectifs",
-        icon_off: easel_outlined,
+        icon_off: EaselOutlinedIcon,
         dropdown: false,
-        path: "/",
+        path: "/objective",
       },
     ],
   },

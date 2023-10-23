@@ -1,10 +1,12 @@
 import Text from "@/components/materials/text";
 import styled from "styled-components";
+import ProfilPopIn from "./pop-in";
 
 export default function ProfilPicture() {
   return (
     <StyledProfilPicture>
       <Text>P</Text>
+      <ProfilPopIn />
     </StyledProfilPicture>
   );
 }

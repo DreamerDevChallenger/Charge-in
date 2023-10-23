@@ -2,6 +2,7 @@ import { chivo } from "@/utils/font";
 import { EyeOutlineIcon, EyeOutlineOffIcon } from "@/utils/icon";
 import { useState } from "react";
 import styled from "styled-components";
+import Icon from "../icon";
 
 interface FormControlProps {
   label: string;
@@ -33,7 +34,11 @@ export default function FormControl({
               autoComplete="current-password"
             />
             <div className="icon-container" onClick={() => setShow(!show)}>
-              {show ? <EyeOutlineOffIcon /> : <EyeOutlineIcon />}
+              {show ? (
+                <Icon Icon={EyeOutlineOffIcon} width={24} height={24} />
+              ) : (
+                <Icon Icon={EyeOutlineIcon} width={24} height={24} />
+              )}
             </div>
           </>
         ) : (

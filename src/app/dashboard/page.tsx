@@ -1,5 +1,7 @@
-import HeaderDashboard from "@/components/dashboard/header";
-import Overlay from "@/components/dashboard/overlay";
+import DashboardObjectives from "@/components/dashboard/home/objective";
+import Icon from "@/components/materials/icon";
+import PageTitle from "@/components/materials/page-title";
+import { FlashOutlinedIcon } from "@/utils/icon";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +11,10 @@ export const metadata: Metadata = {
 export default function Dashboard() {
   return (
     <>
-      <main className="main-dashboard">
-        <HeaderDashboard />
-      </main>
-      <Overlay />
+      <section>
+        <PageTitle>Tableau de bord</PageTitle>
+      </section>
+      <DashboardObjectives />
     </>
   );
 }

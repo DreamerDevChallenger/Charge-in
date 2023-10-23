@@ -1,61 +1,34 @@
+import logo from "@/assets/logo.svg";
 import login from "@/assets/app-icon/login.svg";
 import eye_outline from "@/assets/app-icon/eye-outline.svg";
 import eye_outline_off from "@/assets/app-icon/eye-outline-off.svg";
 import check from "@/assets/app-icon/check.svg";
 import arrow_left from "@/assets/app-icon/arrow-left.svg";
 import notifications from "@/assets/app-icon/notifications.svg";
+import home_outlined from "@/assets/app-icon/home-outline.svg";
+import shield from "@/assets/app-icon/shield-half.svg";
+import person_outlined from "@/assets/app-icon/person-outline.svg";
+import business_outlined from "@/assets/app-icon/business-outline.svg";
+import flash_outlined from "@/assets/app-icon/flash-outline.svg";
+import flash_large from "@/assets/app-icon/flash-outline-large.svg";
 
-import Image from "next/image";
+import car_outlined from "@/assets/app-icon/car-outline.svg";
+import construct_outlined from "@/assets/app-icon/construct-outline.svg";
+import easel_outlined from "@/assets/app-icon/easel-outline.svg";
 
-interface PropIcon {
-  width: number;
-  height: number;
-}
-
-export const LoginIcon = () => (
-  <Image priority src={login.src} alt="Login Icon" height={36} width={36} />
-);
-
-export const EyeOutlineIcon = () => (
-  <Image
-    priority
-    src={eye_outline.src}
-    alt="Eye Outlined Icon"
-    height={24}
-    width={24}
-  />
-);
-
-export const EyeOutlineOffIcon = () => (
-  <Image
-    priority
-    src={eye_outline_off.src}
-    alt="Eye Off Outlined Icon"
-    height={24}
-    width={24}
-  />
-);
-
-export const CheckIcon = () => (
-  <Image priority src={check.src} alt="Check Icon" height={8} width={8} />
-);
-
-export const ArrowLeft = () => (
-  <Image
-    priority
-    src={arrow_left.src}
-    alt="Arrow Left Icon"
-    height={32}
-    width={32}
-  />
-);
-
-export const NotificationsIcon = () => (
-  <Image
-    priority
-    src={notifications.src}
-    alt="Notification Icon"
-    height={24}
-    width={24}
-  />
-);
+export const LogoIcon = logo;
+export const LoginIcon = login;
+export const EyeOutlineIcon = eye_outline;
+export const EyeOutlineOffIcon = eye_outline_off;
+export const CheckIcon = check;
+export const ArrowLeftIcon = arrow_left;
+export const NotificationsIcon = notifications;
+export const HomeOutlinedIon = home_outlined;
+export const ShieldIcon = shield;
+export const PersonOutlinedIcon = person_outlined;
+export const BusinessOutlinedIcon = business_outlined;
+export const FlashOutlinedIcon = flash_outlined;
+export const FlashLargeIcon = flash_large;
+export const CarOutlinedIcon = car_outlined;
+export const ConstructOutlinedIcon = construct_outlined;
+export const EaselOutlinedIcon = easel_outlined;

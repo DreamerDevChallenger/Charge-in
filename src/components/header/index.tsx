@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
-import Image from "next/legacy/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { chivo } from "@/utils/font";
-import { ArrowLeft } from "@/utils/icon";
-import logo from "@/assets/logo.svg";
+import { ArrowLeftIcon } from "@/utils/icon";
+import Icon from "../materials/icon";
 import Logo from "../materials/logo";
 
 export default function Header() {
@@ -16,7 +15,12 @@ export default function Header() {
     <StyledHeader>
       {pathname !== "/" && (
         <Link href={"/"} className={`${chivo.className} link-to-home`}>
-          <ArrowLeft />
+          <Icon
+            width={32}
+            height={32}
+            Icon={ArrowLeftIcon}
+            stroke={"primary"}
+          />
           <span>Retour vers la page d&rsquo;accueil</span>
         </Link>
       )}

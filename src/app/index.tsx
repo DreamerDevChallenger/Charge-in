@@ -4,17 +4,19 @@ import styled, { ThemeProvider } from "styled-components";
 import StyledComponentsRegistry from "../lib/registry";
 import { usePathname } from "next/navigation";
 import Header from "@/components/header";
-import DashboardNav from "@/components/dashboard/header-nav";
-import Overlay from "@/components/dashboard/overlay";
+import DashboardHeaderNav from "@/components/dashboard/header-nav";
 
 const appTheme = {
   text: "#6A6A6A",
+  text_secondary: "#6A93AC",
   border: "#DCE6E5",
   background_primary: "#F4F8F6",
   background_secondary: "#0C354F",
+  background_tertiary: "#326B8F",
   primary: "#369C96",
   secondary: "#304399",
   tertiary: "#4BD2CA",
+  quaternary: "#8BDFDA ",
   black: "#000",
   white: "#FFF",
   gray: "#AFB2B6",
@@ -22,8 +24,11 @@ const appTheme = {
 
 const combineTheme = {
   ...appTheme,
-  primary_gradient: { first: appTheme.primary, second: appTheme.secondary },
-  secondary_gradient: {},
+  primary_gradient: {
+    first: appTheme.background_secondary,
+    second: appTheme.background_tertiary,
+  },
+  secondary_gradient: { first: appTheme.quaternary, second: appTheme.primary },
 };
 
 export default function App({ children }: { children: React.ReactNode }) {
@@ -34,7 +39,7 @@ export default function App({ children }: { children: React.ReactNode }) {
     <StyledComponentsRegistry>
       <ThemeProvider theme={combineTheme}>
         <StyledApp id="app" className={conditionalPath ? "app" : "dashboard"}>
-          {conditionalPath ? <Header /> : <DashboardNav />}
+          {conditionalPath ? <Header /> : <DashboardHeaderNav />}
           {children}
         </StyledApp>
       </ThemeProvider>
@@ -44,7 +49,7 @@ export default function App({ children }: { children: React.ReactNode }) {
 
 const StyledApp = styled.div`
   background-color: ${({ theme }) => theme.background_primary};
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   position: relative;
 
@@ -61,10 +66,10 @@ const StyledApp = styled.div`
   }
 
   &.dashboard {
-    position: relative;
     flex-direction: row;
     .main-dashboard {
       padding: 30px 40px 30px;
+      gap: 30px;
     }
   }
 
@@ -72,5 +77,7 @@ const StyledApp = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    min-height: 100%;
   }
 `;

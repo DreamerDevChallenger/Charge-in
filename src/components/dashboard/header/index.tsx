@@ -22,11 +22,23 @@ export default function HeaderDashboard() {
 }
 
 const StyledHeaderDashboard = styled.header`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap-reverse;
   gap: 24px;
+  padding-bottom: 24px;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    left: 0%;
+    border-top: 1px solid #e0e0e0;
+  }
 
   span {
     color: #282828;

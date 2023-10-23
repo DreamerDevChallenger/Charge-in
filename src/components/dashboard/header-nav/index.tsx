@@ -1,21 +1,16 @@
-import { useState } from "react";
 import styled from "styled-components";
 import DashboardNav from "./nav";
 import Logo from "@/components/materials/logo";
+import HamburgerMenu from "./hamburger-menu";
+import { useAppSelector } from "@/redux/hooks";
+import { selectToggleNavbar } from "@/redux/selectors";
 
 export default function DashboardHeaderNav() {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { isOpen } = useAppSelector(selectToggleNavbar);
+
   return (
     <StyledDashboardHeaderNav className={`${isOpen ? "open" : "close"}`}>
-      <button
-        aria-label="toggle navbar"
-        className={`hamburger-menu ${isOpen ? "open" : "close"}`}
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="lign"></div>
-        <div className="lign"></div>
-        <div className="lign"></div>
-      </button>
+      <HamburgerMenu />
 
       <div className="nav-container">
         <div className="img-container">
@@ -33,7 +28,7 @@ const StyledDashboardHeaderNav = styled.header`
   left: 0;
   background: ${({ theme }) => theme.background_secondary};
   max-width: 270px;
-  width: 80%;
+  min-width: 250px;
   height: 100%;
   margin-right: 45px;
   transition: transform 0.3s ease-out;
@@ -46,6 +41,9 @@ const StyledDashboardHeaderNav = styled.header`
     overflow: auto;
     height: 100%;
     padding: 36px 24px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &.open {
@@ -56,41 +54,14 @@ const StyledDashboardHeaderNav = styled.header`
     transform: translateX(-101%);
   }
 
-  .hamburger-menu {
-    position: absolute;
-    right: -15px;
-    top: 15px;
-    height: 21px;
-    width: 28px;
-    transform: translateX(100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  @media (min-width: 1024px) {
+    position: relative;
+    margin-right: 0px;
+    overflow: hidden;
+    width: auto;
 
-    &.open {
-      .lign {
-        &:nth-child(1) {
-          top: 10px;
-          transform: rotateZ(45deg);
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          top: -8px;
-          transform: rotateZ(-45deg);
-        }
-      }
-    }
-
-    .lign {
-      height: 3px;
-      width: 100%;
-      background-color: ${({ theme }) => theme.background_secondary};
-      border-radius: 10px;
-      position: relative;
-      top: 0;
-      transition: 0.3s ease-in-out;
+    &.close {
+      transform: translateX(0%);
     }
   }
 `;

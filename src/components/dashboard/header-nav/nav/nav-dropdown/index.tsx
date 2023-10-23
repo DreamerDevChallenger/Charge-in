@@ -1,17 +1,25 @@
 import styled from "styled-components";
 import { NavItemProp } from "..";
-import Image from "next/image";
 import Text from "@/components/materials/text";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Icon from "@/components/materials/icon";
 
 export default function NavDropdown({ children, icon, path }: NavItemProp) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const pathname = usePathname();
+  const url = `/dashboard${path}`;
+  const urlInProgress = `${url}/in-progress`;
+  const urlArchived = `${url}/archived`;
+
   return (
-    <StyledNavDropdown className={`${isOpen ? "open" : "close"}`}>
+    <StyledNavDropdown
+      className={`${isOpen || pathname === urlInProgress ? "open" : "close"}`}
+    >
       <div className="nav-link" onClick={() => setIsOpen(!isOpen)}>
-        <Image src={icon.src} alt="" width={20} height={20} />
+        <Icon Icon={icon} width={20} height={20} />
         <Text>{children}</Text>
         <div className={`toggle-dropdown`}>
           <div className="lign"></div>
@@ -19,8 +27,8 @@ export default function NavDropdown({ children, icon, path }: NavItemProp) {
         </div>
       </div>
       <div className="dropdown-list">
-        <Link href={`/dashboard${path}/in-progress`}>En cours</Link>
-        <Link href={`/dashboard${path}/archived`}>Archivés</Link>
+        <Link href={`${url}/in-progress`}>En cours</Link>
+        <Link href={`/${url}/archived`}>Archivés</Link>
       </div>
     </StyledNavDropdown>
   );
@@ -99,5 +107,6 @@ const StyledNavDropdown = styled.div`
 
   .text {
     flex: 1;
+    overflow: hidden;
   }
 `;

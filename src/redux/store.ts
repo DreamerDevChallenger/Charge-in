@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+import toggleNavbarReducer from "@/redux/reducers/toggle-navbar";
 
 import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
@@ -23,7 +24,7 @@ const storage =
     ? createWebStorage("local")
     : createNoopStorage();
 
-const reducers = combineReducers({});
+const reducers = combineReducers({ toggleNavbar: toggleNavbarReducer });
 
 const persistConfig = {
   key: "root",
