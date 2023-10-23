@@ -11,10 +11,10 @@ import person_outlined from "@/assets/app-icon/person-outline.svg";
 import business_outlined from "@/assets/app-icon/business-outline.svg";
 import flash_outlined from "@/assets/app-icon/flash-outline.svg";
 import flash_large from "@/assets/app-icon/flash-outline-large.svg";
-
 import car_outlined from "@/assets/app-icon/car-outline.svg";
 import construct_outlined from "@/assets/app-icon/construct-outline.svg";
 import easel_outlined from "@/assets/app-icon/easel-outline.svg";
+import person_gradient from "@/assets/app-icon/person-gradient.svg";
 
 export const LogoIcon = logo;
 export const LoginIcon = login;
@@ -32,3 +32,4 @@ export const FlashLargeIcon = flash_large;
 export const CarOutlinedIcon = car_outlined;
 export const ConstructOutlinedIcon = construct_outlined;
 export const EaselOutlinedIcon = easel_outlined;
+export const PersonGradientIcon = person_gradient;

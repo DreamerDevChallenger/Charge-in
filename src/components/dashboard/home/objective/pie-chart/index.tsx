@@ -4,15 +4,11 @@ import {
   RadialBarChart,
   PolarAngleAxis,
   RadialBar,
-  Pie,
 } from "recharts";
 import { dataObjective } from "../data";
 import Text from "@/components/materials/text";
 
 export default function DashboardPieChart() {
-  const LinearGradient = <linearGradient />;
-  const percentScore = 0.99;
-
   return (
     <StyledPieChart>
       {dataObjective.pie_chart.map((item, index) => (
@@ -68,7 +64,7 @@ const StyledPieChart = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
     gap: 24px;
 
     .pie-chart {

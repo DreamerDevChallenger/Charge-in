@@ -3,14 +3,13 @@
 import styled from "styled-components";
 import Trimester from "./trimester";
 import PieChart from "./pie-chart";
+import SectionTitle from "@/components/materials/section-title";
 
 export default function DashboardObjectives() {
   return (
     <StyledDashboardObjectives>
       <header>
-        <h2 className="objective-title">
-          Objectifs de <span>Charge-in</span>
-        </h2>
+        <SectionTitle important="Charge-in">Objectifs de</SectionTitle>
         <Trimester />
       </header>
       <PieChart />
@@ -25,7 +24,9 @@ const StyledDashboardObjectives = styled.section`
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 36px;
 
   header {
     display: flex;
@@ -41,15 +42,4 @@ const StyledDashboardObjectives = styled.section`
       `${theme.primary_gradient.first} 0%, ${theme.primary_gradient.second} 98.23%`}
   );
   box-shadow: 0px 4px 16px 0px rgba(164, 188, 211, 0.6);
-
-  .objective-title {
-    font-weight: 600;
-    text-align: center;
-    flex: 1;
-
-    span {
-      color: ${({ theme }) => theme.tertiary};
-      white-space: nowrap;
-    }
-  }
 `;

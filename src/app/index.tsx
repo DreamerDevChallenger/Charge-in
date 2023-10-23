@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Header from "@/components/header";
 import DashboardHeaderNav from "@/components/dashboard/header-nav";
 
-const appTheme = {
+export const appTheme = {
   text: "#6A6A6A",
   text_secondary: "#6A93AC",
   border: "#DCE6E5",
