@@ -68,7 +68,7 @@ const StyledApp = styled.div`
   &.dashboard {
     flex-direction: row;
     .main-dashboard {
-      padding: 30px 40px 30px;
+      padding: 30px 20px 30px;
       gap: 30px;
     }
   }
@@ -79,5 +79,13 @@ const StyledApp = styled.div`
     flex-direction: column;
     overflow: auto;
     min-height: 100%;
+  }
+
+  @media (min-width: 768px) {
+    &.dashboard {
+      .main-dashboard {
+        padding: 30px 40px 30px;
+      }
+    }
   }
 `;

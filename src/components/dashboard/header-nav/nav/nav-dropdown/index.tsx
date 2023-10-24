@@ -27,8 +27,8 @@ export default function NavDropdown({ children, icon, path }: NavItemProp) {
         </div>
       </div>
       <div className="dropdown-list">
-        <Link href={`${url}/in-progress`}>En cours</Link>
-        <Link href={`/${url}/archived`}>Archivés</Link>
+        <Link href={urlInProgress}>En cours</Link>
+        <Link href={urlArchived}>Archivés</Link>
       </div>
     </StyledNavDropdown>
   );

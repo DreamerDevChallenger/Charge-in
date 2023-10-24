@@ -1,28 +1,30 @@
 import Text from "@/components/materials/text";
 import styled from "styled-components";
 import ProfilPopIn from "./pop-in";
+import { useState } from "react";
+import { ProfilAvatar } from "@/components/materials/profil";
 
 export default function ProfilPicture() {
+  const [isHover, setIsHover] = useState<boolean>(false);
+
   return (
-    <StyledProfilPicture>
-      <Text>P</Text>
+    <StyledProfilPicture
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      /* onClick={()=> setIsHover(!isHover)} */
+      className={`${isHover ? "hover " : ""}profil`}
+    >
+      <ProfilAvatar width={47} height={47} />
       <ProfilPopIn />
     </StyledProfilPicture>
   );
 }
 
 const StyledProfilPicture = styled.div`
-  position: relative;
-  border-radius: 100%;
-  height: 47px;
-  width: 47px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${({ theme }) => theme.secondary};
-
-  .text {
-    font-size: 18px;
-    color: ${({ theme }) => theme.white};
+  &.hover {
+    .pop-in {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 `;

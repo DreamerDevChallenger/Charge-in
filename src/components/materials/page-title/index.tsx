@@ -2,12 +2,17 @@
 
 import styled from "styled-components";
 import Icon from "../icon";
-import { FlashLargeIcon } from "@/utils/icon";
 
-export default function PageTitle({ children }: { children: React.ReactNode }) {
+export default function PageTitle({
+  children,
+  icon,
+}: {
+  children: React.ReactNode;
+  icon: string;
+}) {
   return (
     <StyledPageTitle>
-      <Icon Icon={FlashLargeIcon} width={36} height={36} />
+      <Icon Icon={icon} width={36} height={36} />
       <span>{children}</span>
     </StyledPageTitle>
   );

@@ -15,6 +15,10 @@ import car_outlined from "@/assets/app-icon/car-outline.svg";
 import construct_outlined from "@/assets/app-icon/construct-outline.svg";
 import easel_outlined from "@/assets/app-icon/easel-outline.svg";
 import person_gradient from "@/assets/app-icon/person-gradient.svg";
+import log_out from "@/assets/app-icon/log-out-outline.svg";
+import home_large from "@/assets/app-icon/home-large.svg";
+import search from "@/assets/app-icon/search.svg";
+import arrow_small from "@/assets/app-icon/arrow-small.svg";
 
 export const LogoIcon = logo;
 export const LoginIcon = login;
@@ -33,3 +37,7 @@ export const CarOutlinedIcon = car_outlined;
 export const ConstructOutlinedIcon = construct_outlined;
 export const EaselOutlinedIcon = easel_outlined;
 export const PersonGradientIcon = person_gradient;
+export const LogoOutIocn = log_out;
+export const HomeLargeIcon = home_large;
+export const SearchIcon = search;
+export const ArrowSmallIcon = arrow_small;

@@ -1,4 +1,4 @@
-import Picture from "@/components/materials/icon";
+import Icon from "@/components/materials/icon";
 import { LoginIcon } from "@/utils/icon";
 import Link from "next/link";
 import styled from "styled-components";
@@ -7,7 +7,7 @@ export default function HomePopIn() {
   return (
     <StyledHomePopIn href={"/login"}>
       <span>Connecter vous ? </span>
-      <LoginIcon src={LoginIcon} width={32} height={32} />
+      <Icon Icon={LoginIcon} width={32} height={32} />
     </StyledHomePopIn>
   );
 }

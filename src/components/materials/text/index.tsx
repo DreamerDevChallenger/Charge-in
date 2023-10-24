@@ -1,9 +1,19 @@
 import styled from "styled-components";
 import { chivo } from "@/utils/font";
 
-export default function Text({ children }: { children: React.ReactNode }) {
+export default function Text({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <StyledText className={`${chivo.className} text`}>{children}</StyledText>
+    <StyledText
+      className={`${chivo.className} ${className ? `${className} ` : ""}text`}
+    >
+      {children}
+    </StyledText>
   );
 }
 

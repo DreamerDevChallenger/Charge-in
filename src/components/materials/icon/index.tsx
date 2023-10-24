@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 
 interface PictureProp {
@@ -36,7 +38,11 @@ const StyledIcon = styled.div<{
     ${({ stroke, theme }) =>
       stroke &&
       `stroke:${
-        stroke === "primary" ? theme.primary : stroke === "white" && theme.white
+        stroke === "primary"
+          ? theme.primary
+          : stroke === "white"
+          ? theme.white
+          : stroke === "black" && theme.black
       }`}
   }
 `;

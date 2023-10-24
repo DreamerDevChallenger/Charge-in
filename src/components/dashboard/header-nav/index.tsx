@@ -27,10 +27,7 @@ const StyledDashboardHeaderNav = styled.header`
   top: 0;
   left: 0;
   background: ${({ theme }) => theme.background_secondary};
-  max-width: 270px;
-  min-width: 250px;
   height: 100%;
-  margin-right: 45px;
   transition: transform 0.3s ease-out;
   z-index: 5;
 

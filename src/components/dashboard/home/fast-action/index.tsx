@@ -8,7 +8,9 @@ import Icon from "@/components/materials/icon";
 export default function FastAction() {
   return (
     <StyledFastAction>
-      <SectionTitle important="Rapides">Actions</SectionTitle>
+      <header>
+        <SectionTitle important="Rapides">Actions</SectionTitle>
+      </header>
       <div className="action-container">
         {dataFastAction.map((item, index) => (
           <div key={index} className="action-item">

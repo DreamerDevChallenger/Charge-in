@@ -22,24 +22,21 @@ const StyledDashboardStatistic = styled.section`
   flex-direction: column;
   gap: 24px;
   .card-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: space-around;
     gap: 24px;
-    align-content: flex-start;
-    justify-content: center;
-
     .card {
       background: white;
       padding: 26px 30px;
-      height: 260px;
-      width: 220px;
+      width: 100%;
+      margin: auto;
+      height: 220px;
       border-radius: 16px;
       box-shadow: 0px 4px 16px 0px rgba(176, 189, 189, 0.16);
     }
   }
   @media (min-width: 768px) {
-    .card-container {
-      justify-content: space-between;
-    }
+    justify-content: center;
   }
 `;

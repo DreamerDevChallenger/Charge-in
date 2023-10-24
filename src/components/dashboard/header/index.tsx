@@ -6,12 +6,16 @@ import Text from "@/components/materials/text";
 
 import ProfilPicture from "./profil-picture";
 import Notification from "./notification";
+import { ProfilUserName } from "@/components/materials/profil";
 
 export default function HeaderDashboard() {
   return (
     <StyledHeaderDashboard>
       <Text>
-        Bonjour, <strong className="username">Prénom Nom</strong>
+        <span className="hello"> Bonjour, </span>
+        <strong className="username">
+          <ProfilUserName />
+        </strong>
       </Text>
       <div className="pop-container">
         <Notification />
@@ -40,7 +44,7 @@ const StyledHeaderDashboard = styled.header`
     border-top: 1px solid #e0e0e0;
   }
 
-  span {
+  .hello {
     color: #282828;
     font-weight: 600;
   }
