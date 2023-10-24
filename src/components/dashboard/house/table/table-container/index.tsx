@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { dataTable } from "./data";
 import Text from "@/components/materials/text";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 /* import { selectUser } from "@/redux/selectors";
 import { useAppSelector } from "@/redux/hooks"; */
 
@@ -15,6 +17,8 @@ export default function TableContainer({
     step: number;
   }[];
 }) {
+  const pathname = usePathname();
+
   return (
     <StyledTableContainer>
       <thead className="table-header">
@@ -31,26 +35,29 @@ export default function TableContainer({
           <tr key={index} className="table-row">
             {dataTable.map((title, index) => (
               <td key={index} className={`table-item`}>
-                <Text
-                  className={`${
-                    title === "Étape" &&
-                    `step ${
-                      item.step === 1
-                        ? "first"
-                        : item.step === 2
-                        ? "second"
-                        : item.step === 3
-                        ? "third"
-                        : item.step === 4 && "fourth"
-                    }`
-                  }`}
-                >
-                  {title === "Nom" &&
-                    `${item.first_name.slice(0, 1)}.${item.last_name}`}
-                  {title === "Borne choisie" && `Borne Modèle ${item.charging}`}
-                  {title === "Devis" && `###`}
-                  {title === "Étape" && `Étape ${item.step}`}
-                </Text>
+                <Link href={`${pathname}/profil/${item.id}`}>
+                  <Text
+                    className={`${
+                      title === "Étape" &&
+                      `step ${
+                        item.step === 1
+                          ? "first"
+                          : item.step === 2
+                          ? "second"
+                          : item.step === 3
+                          ? "third"
+                          : item.step === 4 && "fourth"
+                      }`
+                    }`}
+                  >
+                    {title === "Nom" &&
+                      `${item.first_name.slice(0, 1)}.${item.last_name}`}
+                    {title === "Borne choisie" &&
+                      `Borne Modèle ${item.charging}`}
+                    {title === "Devis" && `###`}
+                    {title === "Étape" && `Étape ${item.step}`}
+                  </Text>
+                </Link>
               </td>
             ))}
           </tr>

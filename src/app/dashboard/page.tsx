@@ -1,6 +1,7 @@
 import FastAction from "@/components/dashboard/home/fast-action";
 import DashboardObjectives from "@/components/dashboard/home/objective";
 import DashboardStatistic from "@/components/dashboard/home/statistic";
+
 import PageTitle from "@/components/materials/page-title";
 import { FlashOutlinedIcon } from "@/utils/icon";
 import { Metadata } from "next";

@@ -8,12 +8,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <section>
-        <PageTitle icon={HomeLargeIcon}>Maisons</PageTitle>
-      </section>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

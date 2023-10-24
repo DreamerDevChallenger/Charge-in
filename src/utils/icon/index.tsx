@@ -19,6 +19,7 @@ import log_out from "@/assets/app-icon/log-out-outline.svg";
 import home_large from "@/assets/app-icon/home-large.svg";
 import search from "@/assets/app-icon/search.svg";
 import arrow_small from "@/assets/app-icon/arrow-small.svg";
+import person_large from "@/assets/app-icon/person_large.svg";
 
 export const LogoIcon = logo;
 export const LoginIcon = login;
@@ -41,3 +42,4 @@ export const LogoOutIocn = log_out;
 export const HomeLargeIcon = home_large;
 export const SearchIcon = search;
 export const ArrowSmallIcon = arrow_small;
+export const PersonLargeIcon = person_large;
