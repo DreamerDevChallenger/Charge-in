@@ -31,8 +31,18 @@ export default function NavDropdown({ children, icon, path }: NavItemProp) {
         </div>
       </div>
       <div className="dropdown-list">
-        <Link href={urlInProgress}>En cours</Link>
-        <Link href={urlArchived}>Archivés</Link>
+        <Link
+          href={urlInProgress}
+          className={pathname.includes(urlInProgress) ? "active" : "inactive"}
+        >
+          En cours
+        </Link>
+        <Link
+          href={urlArchived}
+          className={pathname.includes(urlArchived) ? "active" : "inactive"}
+        >
+          Archivés
+        </Link>
       </div>
     </StyledNavDropdown>
   );
@@ -65,6 +75,9 @@ const StyledNavDropdown = styled.div`
     color: #6a93ac;
     transition: 0.3s;
     transform-origin: top;
+    .active {
+      color: ${({ theme }) => theme.primary};
+    }
   }
 
   .toggle-dropdown {

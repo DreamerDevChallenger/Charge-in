@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import Text from "../text";
-import { useAppDispatch } from "@/redux/hooks";
-import { toggleOverlay } from "@/redux/reducers/overlay";
 
 export default function ButtonProfil({
   children,
@@ -11,7 +9,7 @@ export default function ButtonProfil({
   onClick: () => void;
 }) {
   return (
-    <StyledButtonProfil onClick={() => onClick()}>
+    <StyledButtonProfil onClick={onClick}>
       <Text>{children}</Text>
     </StyledButtonProfil>
   );

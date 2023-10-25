@@ -35,7 +35,11 @@ export default function DashboardProfilAccessories() {
           </div>
         </div>
         {isOpen && popIn && (
-          <DashboardProfilPopIn title="les accessoires" accessory />
+          <DashboardProfilPopIn
+            title="les accessoires"
+            accessory
+            setState={setPopIn}
+          />
         )}
         <div>
           <ButtonProfil onClick={handleClick}>

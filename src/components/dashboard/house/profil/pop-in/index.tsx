@@ -7,23 +7,38 @@ import { SyncIcon } from "@/utils/icon";
 import { dataAccessory } from "../accessories/data";
 import styled from "styled-components";
 import DashboardProfilPopInAccessory from "./accessory";
+import { StaticImageData } from "next/image";
+import DashboardProfilBox from "../box";
+import chargin from "@/assets/charging.png";
+import { dataBoxCharging } from "../box/data";
 
 export default function DashboardProfilPopIn({
   title,
   description,
   accessory,
+  img,
+  dataBox,
+  setState,
 }: {
   title: string;
   description?: string;
   accessory?: boolean;
+  img?: StaticImageData;
+  dataBox?: Array<string>;
+  setState: (e: boolean) => void;
 }) {
   const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    dispatch(toggleOverlay());
+    setState(false);
+  };
 
   return (
     <StyledDashboardProfilPopIn>
       <div className="pop-in-card">
         <div className="pop-btn-container">
-          <button className="close" onClick={() => dispatch(toggleOverlay())}>
+          <button className="close" onClick={handleClick}>
             X
           </button>
         </div>
@@ -42,11 +57,19 @@ export default function DashboardProfilPopIn({
           )}
 
           <div className="pop-container">
-            {accessory && (
+            {accessory ? (
               <div className="pop-accessory">
                 {dataAccessory.map((item, index) => (
                   <DashboardProfilPopInAccessory key={index} />
                 ))}
+              </div>
+            ) : (
+              <div>
+                <DashboardProfilBox
+                  img={img ? img : chargin}
+                  data={dataBox ? dataBox : dataBoxCharging}
+                />
+                <h3>Autres bornes proposées</h3>
               </div>
             )}
           </div>
@@ -76,7 +99,7 @@ const StyledDashboardProfilPopIn = styled.div`
     border-radius: 8px;
     box-shadow: 0px 12px 24px 0px rgba(112, 112, 112, 0.25);
     max-width: 1000px;
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     padding: 16px 10px;
     display: flex;
