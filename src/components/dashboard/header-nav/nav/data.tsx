@@ -1,13 +1,17 @@
 import {
-  BusinessOutlinedIcon,
   CarOutlinedIcon,
   ConstructOutlinedIcon,
   EaselOutlinedIcon,
-  FlashOutlinedIcon,
-  HomeOutlinedIon,
-  PersonOutlinedIcon,
-  ShieldIcon,
 } from "@/utils/icon";
+
+import {
+  HomeOutlined,
+  BusinessOutlined,
+  PersonOutlined,
+  BoltOutlined,
+  Security,
+  DirectionsCarOutlined,
+} from "@mui/icons-material";
 
 export const dataNav = [
   {
@@ -15,19 +19,19 @@ export const dataNav = [
     items: [
       {
         title: "Maisons",
-        icon_off: HomeOutlinedIon,
+        icon_off: HomeOutlined,
         dropdown: true,
         path: "/house",
       },
       {
         title: "Appartements",
-        icon_off: HomeOutlinedIon,
+        icon_off: HomeOutlined,
         dropdown: true,
         path: "/apartment",
       },
       {
         title: "Études",
-        icon_off: BusinessOutlinedIcon,
+        icon_off: BusinessOutlined,
         dropdown: true,
         path: "/",
       },
@@ -38,25 +42,25 @@ export const dataNav = [
     items: [
       {
         title: "CEO & Admins",
-        icon_off: ShieldIcon,
+        icon_off: Security,
         dropdown: false,
         path: "/admin",
       },
       {
         title: "Project Managers",
-        icon_off: PersonOutlinedIcon,
+        icon_off: PersonOutlined,
         dropdown: false,
         path: "/manager",
       },
       {
         title: "Installateurs",
-        icon_off: PersonOutlinedIcon,
+        icon_off: PersonOutlined,
         dropdown: false,
         path: "/installer",
       },
       {
         title: "Clients B2C",
-        icon_off: PersonOutlinedIcon,
+        icon_off: PersonOutlined,
         dropdown: false,
         path: "/client",
       },
@@ -67,28 +71,28 @@ export const dataNav = [
     items: [
       {
         title: "Bornes",
-        icon_off: FlashOutlinedIcon,
+        icon_off: BoltOutlined,
         dropdown: false,
         path: "/terminal",
       },
       {
         title: "Véhicules",
-        icon_off: CarOutlinedIcon,
+        icon_off: DirectionsCarOutlined,
         dropdown: false,
         path: "/car",
       },
-      {
+      /*   {
         title: "Accessoires",
         icon_off: ConstructOutlinedIcon,
         dropdown: false,
         path: "/accessory",
-      },
-      {
+      }, */
+      /*   {
         title: "Objectifs",
         icon_off: EaselOutlinedIcon,
         dropdown: false,
         path: "/objective",
-      },
+      }, */
     ],
   },
 ];

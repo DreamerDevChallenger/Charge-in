@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { dataNav } from "./data";
 import NavItem from "./nav-item";
 import { chivo } from "@/utils/font";
-import dashboard from "@/assets/app-icon/dashboard.svg";
 import Text from "@/components/materials/text";
 import NavDropdown from "./nav-dropdown";
+import { Window } from "@mui/icons-material";
 
 export interface NavItemProp {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export default function DashboardNav() {
   return (
     <StyledDashboardNav className={chivo.className}>
       <ul>
-        <NavItem icon={dashboard} path="/dashboard">
+        <NavItem icon={Window} path="/dashboard">
           Accueil
         </NavItem>
       </ul>

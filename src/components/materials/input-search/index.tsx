@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Icon from "../icon";
-import { SearchIcon } from "@/utils/icon";
 import { useState } from "react";
+import { Search } from "@mui/icons-material";
 
 export default function InputSearch({
   onSearch,
@@ -16,12 +16,12 @@ export default function InputSearch({
 
   return (
     <StyledInputSearch>
-      {!isFocus && <Icon width={14} height={14} Icon={SearchIcon} />}
+      {!isFocus && <Icon width={14} height={14} Icon={Search} />}
       <input
         type="text"
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
-        onChange={() => {}}
+        onChange={handleChange}
       />
     </StyledInputSearch>
   );

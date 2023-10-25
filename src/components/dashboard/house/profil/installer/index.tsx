@@ -7,7 +7,7 @@ import { selectOverlay } from "@/redux/selectors";
 import { toggleOverlay } from "@/redux/reducers/overlay";
 import { useState } from "react";
 import DashboardProfilPopIn from "../pop-in";
-import { dataBoxCharging } from "../box/data";
+import { dataBoxCharging, dataBoxInstaller } from "../box/data";
 
 export default function DashboardProfilInstaller() {
   const [popIn, setPopIn] = useState(false);
@@ -26,14 +26,19 @@ export default function DashboardProfilInstaller() {
     <StyledInstaller>
       <div className="card">
         <h2>Installateur choisi</h2>
-        <DashboardProfilBox img={installer} data={dataBoxCharging} />
+        <DashboardProfilBox img={installer} data={dataBoxInstaller} />
         <div className="card-container">
           <ButtonProfil onClick={handleClick}>
             Modifier l’installateur
           </ButtonProfil>
         </div>
         {condition && (
-          <DashboardProfilPopIn setState={setPopIn} title="l'installateur" />
+          <DashboardProfilPopIn
+            setState={setPopIn}
+            title="l'installateur"
+            img={installer}
+            name="Installeur"
+          />
         )}
       </div>
     </StyledInstaller>

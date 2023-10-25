@@ -1,5 +1,6 @@
 import Icon from "@/components/materials/icon";
 import { LoginIcon } from "@/utils/icon";
+import { Login } from "@mui/icons-material";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -7,7 +8,7 @@ export default function HomePopIn() {
   return (
     <StyledHomePopIn href={"/login"}>
       <span>Connecter vous ? </span>
-      <Icon Icon={LoginIcon} width={32} height={32} />
+      <Login />
     </StyledHomePopIn>
   );
 }
@@ -26,4 +27,8 @@ const StyledHomePopIn = styled(Link)`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+
+  svg {
+    color: ${({ theme }) => theme.primary};
+  }
 `;

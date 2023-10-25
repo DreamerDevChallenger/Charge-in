@@ -57,19 +57,5 @@ const StyledDashboardProfilAccessories = styled.section`
     flex-wrap: wrap;
     gap: 36px;
     list-style: none;
-    .card-list-item {
-      display: flex;
-      align-items: center;
-
-      &:before {
-        display: inline-block;
-        content: "";
-        background: ${({ theme }) => theme.primary};
-        width: 5px;
-        height: 5px;
-        margin-right: 10px;
-        border-radius: 100%;
-      }
-    }
   }
 `;

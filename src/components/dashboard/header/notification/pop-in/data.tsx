@@ -1,14 +1,13 @@
 import person_outlined from "@/assets/app-icon/person-outline.svg";
 import key_outlined from "@/assets/app-icon/key-outline.svg";
-import { KeyOutlined, PersonOutline } from "@mui/icons-material";
 
 export const dataProfil = [
   {
-    icon: PersonOutline,
+    icon: person_outlined,
     text: "Informations personnelles",
   },
   {
-    icon: KeyOutlined,
+    icon: key_outlined,
     text: "Changer mon mot de passe",
   },
 ];

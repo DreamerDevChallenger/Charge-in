@@ -33,6 +33,7 @@ export default function DashboardProfilCharging() {
             title="la borne"
             description="En changeant la borne, vous devrez changer d’installateur."
             setState={setPopIn}
+            name="Borne"
           />
         )}
       </div>

@@ -3,6 +3,8 @@
 import SectionTitle from "@/components/materials/section-title";
 import styled from "styled-components";
 import { dataStatistic } from "./data";
+import Icon from "@/components/materials/icon";
+import Text from "@/components/materials/text";
 
 export default function DashboardStatistic() {
   return (
@@ -10,7 +12,10 @@ export default function DashboardStatistic() {
       <SectionTitle important="Charge-in">Statistiques de</SectionTitle>
       <div className="card-container">
         {dataStatistic.map((item, index) => (
-          <div key={index} className="card"></div>
+          <div key={index} className="card">
+            <Icon Icon={item.icon} width={41} height={36} />
+            <Text>{item.text}</Text>
+          </div>
         ))}
       </div>
     </StyledDashboardStatistic>
@@ -23,20 +28,29 @@ const StyledDashboardStatistic = styled.section`
   gap: 24px;
   .card-container {
     display: grid;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, 260px);
-    justify-content: space-around;
     gap: 24px;
     .card {
       background: white;
       padding: 26px 30px;
       width: 100%;
+      height: 100%;
       margin: auto;
-      height: 220px;
       border-radius: 16px;
       box-shadow: 0px 4px 16px 0px rgba(176, 189, 189, 0.16);
+
+      .text {
+        color: #8fa2a2;
+        font-size: 18px;
+      }
     }
   }
   @media (min-width: 768px) {
     justify-content: center;
+  }
+
+  svg {
+    color: ${({ theme }) => theme.primary};
   }
 `;

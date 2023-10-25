@@ -1,29 +1,37 @@
-import { PersonOutlinedIcon } from "@/utils/icon";
+import {
+  Person,
+  InsertDriveFileOutlined,
+  EvStationOutlined,
+  ElectricCarOutlined,
+  BuildOutlined,
+  AdsClick,
+  AdsClickOutlined,
+} from "@mui/icons-material";
 
 export const dataFastAction = [
   {
     text: "Ajouter un installateur",
-    icon: PersonOutlinedIcon,
+    icon: Person,
   },
   {
     text: "Ajouter une étude",
-    icon: PersonOutlinedIcon,
+    icon: InsertDriveFileOutlined,
   },
   {
     text: "Ajouter une borne",
-    icon: PersonOutlinedIcon,
+    icon: EvStationOutlined,
   },
   {
     text: "Ajouter un véhicule",
-    icon: PersonOutlinedIcon,
+    icon: ElectricCarOutlined,
   },
   {
     text: "Ajouter un accessoire",
-    icon: PersonOutlinedIcon,
+    icon: BuildOutlined,
   },
 
   {
     text: "Ajouter un objectif",
-    icon: PersonOutlinedIcon,
+    icon: AdsClickOutlined,
   },
 ];

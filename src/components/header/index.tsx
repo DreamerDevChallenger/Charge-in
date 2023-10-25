@@ -4,9 +4,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { chivo } from "@/utils/font";
-import { ArrowLeftIcon } from "@/utils/icon";
-import Icon from "../materials/icon";
 import Logo from "../materials/logo";
+import { ArrowBackIos } from "@mui/icons-material";
 
 export default function Header() {
   const pathname = usePathname();
@@ -15,12 +14,7 @@ export default function Header() {
     <StyledHeader>
       {pathname !== "/" && (
         <Link href={"/"} className={`${chivo.className} link-to-home`}>
-          <Icon
-            width={32}
-            height={32}
-            Icon={ArrowLeftIcon}
-            stroke={"primary"}
-          />
+          <ArrowBackIos />
           <span>Retour vers la page d&rsquo;accueil</span>
         </Link>
       )}

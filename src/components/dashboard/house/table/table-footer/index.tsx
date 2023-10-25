@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 import { selectUser } from "@/redux/selectors";
 import { useAppSelector } from "@/redux/hooks";
 import Icon from "@/components/materials/icon";
-import { ArrowSmallIcon } from "@/utils/icon";
+import { ArrowBackIos } from "@mui/icons-material";
 
 export default function TableFooter({
   setEntries,
@@ -11,12 +11,20 @@ export default function TableFooter({
   entries,
   current,
   currentData,
+  stateTable,
 }: {
   setEntries: Dispatch<SetStateAction<number>>;
   paginate: (e: number) => void;
   entries: number;
   current: number;
   currentData: {
+    id: number;
+    first_name: string;
+    last_name: string;
+    charging: number;
+    step: number;
+  }[];
+  stateTable: {
     id: number;
     first_name: string;
     last_name: string;
@@ -51,14 +59,15 @@ export default function TableFooter({
       </div>
       <div className="showing">
         {entries * current - entries + 1}-
-        {currentData.length + entries * current - entries} de {data.length}
+        {currentData.length + entries * current - entries} de{" "}
+        {stateTable.length}
       </div>
       <div className="btn-container">
         <button
           className="btn previous"
           onClick={current !== 1 ? () => paginate(current - 1) : () => {}}
         >
-          <Icon Icon={ArrowSmallIcon} width={16} height={16} />
+          <Icon Icon={ArrowBackIos} width={16} height={16} />
         </button>
         <button
           className="btn next"
@@ -68,7 +77,7 @@ export default function TableFooter({
               : () => {}
           }
         >
-          <Icon Icon={ArrowSmallIcon} width={16} height={16} />
+          <Icon Icon={ArrowBackIos} width={16} height={16} />
         </button>
       </div>
     </StyledTableFooter>
@@ -86,10 +95,14 @@ const StyledTableFooter = styled.div`
     display: flex;
     gap: 8px;
     .previous {
-      transform: rotate(90deg);
+      transform: rotate(0);
     }
     .next {
-      transform: rotate(-90deg);
+      transform: rotate(180deg);
     }
+  }
+
+  select {
+    background: red;
   }
 `;

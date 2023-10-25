@@ -6,7 +6,12 @@ export default function FormRememberMe() {
   return (
     <StyledFormRemeberMe className={chivo.className}>
       <div className="remember-me">
-        <input className="check-remember" type="checkbox" name="" id="" />
+        <input
+          className="check-remember"
+          type="checkbox"
+          name="checkbox"
+          id="chekckbox"
+        />
         <span>Se souvenir de moi</span>
       </div>
       <Link href={"#"} className="forget-password">
@@ -48,9 +53,9 @@ const StyledFormRemeberMe = styled.div`
         border-style: solid;
         border-color: #fff;
         border-width: 0 2px 2px 0;
-
         transform: rotate(45deg);
       }
+
       &:checked {
         border: 1px solid ${({ theme }) => theme.secondary};
         background-color: ${({ theme }) => theme.secondary};

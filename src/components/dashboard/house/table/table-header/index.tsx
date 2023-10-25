@@ -21,8 +21,8 @@ export default function TableHeader({
 }) {
   const { data } = useAppSelector(selectUser);
 
-  const onSearch = (e: any) => {
-    const search = stateTable.filter(
+  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const search = data.filter(
       (state: {
         id: number;
         first_name: string;
@@ -34,7 +34,7 @@ export default function TableHeader({
     );
     paginate(1);
     setStateTable(search);
-    console.log(search);
+    console.log(data);
   };
 
   return (

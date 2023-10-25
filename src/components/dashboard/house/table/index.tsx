@@ -25,7 +25,7 @@ export default function DashboardHouseTable() {
   };
 
   useEffect(() => {
-    setStateTable(data);
+    return () => setStateTable(data);
   }, [data]);
 
   return (
@@ -44,6 +44,7 @@ export default function DashboardHouseTable() {
         entries={entries}
         current={current}
         currentData={currentData}
+        stateTable={stateTable}
       />
     </StyledDashboardHouseTable>
   );
@@ -56,6 +57,7 @@ const StyledDashboardHouseTable = styled.section`
   max-width: 1200px;
 
   .table-wrapper {
-    overflow-x: auto;
+    overflow: auto;
+    max-height: 350px;
   }
 `;

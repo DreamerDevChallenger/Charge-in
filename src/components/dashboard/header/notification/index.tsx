@@ -1,21 +1,51 @@
 import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
-import { NotificationsIcon } from "@/utils/icon";
 import styled from "styled-components";
+import NotificationPopIn from "./pop-in";
+import { useState } from "react";
+import { useAppSelector } from "@/redux/hooks";
+import { selectNotification } from "@/redux/selectors";
+import { Notifications } from "@mui/icons-material";
 
 export default function Notification() {
+  const [isHover, setIsHover] = useState<boolean>(false);
+  const { data } = useAppSelector(selectNotification);
+
   return (
-    <StyledNotification>
-      <Icon Icon={NotificationsIcon} width={24} height={24} />
-      <div className="number-notif">
-        <Text>4</Text>
+    <StyledNotification
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      /* onClick={()=> setIsHover(!isHover)} */
+      className={`${isHover ? "hover " : ""}profil`}
+    >
+      <div className="notif-container">
+        <Icon Icon={Notifications} width={24} height={24} />
+        {data.length !== 0 && (
+          <div className="number-notif">
+            <Text>{data.length}</Text>
+          </div>
+        )}
       </div>
+      <NotificationPopIn />
     </StyledNotification>
   );
 }
 
 const StyledNotification = styled.div`
-  position: relative;
+  .notif-container {
+    position: relative;
+  }
+
+  .icon {
+    color: #afb2b6;
+  }
+
+  &.hover {
+    .pop-in {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 
   .number-notif {
     position: absolute;

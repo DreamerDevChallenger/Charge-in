@@ -2,13 +2,15 @@
 
 import styled from "styled-components";
 import Icon from "../icon";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { SvgIconTypeMap } from "@mui/material";
 
 export default function PageTitle({
   children,
   icon,
 }: {
   children: React.ReactNode;
-  icon: string;
+  icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
 }) {
   return (
     <StyledPageTitle>
@@ -27,4 +29,8 @@ const StyledPageTitle = styled.h1`
   flex-wrap: wrap-reverse;
   text-align: center;
   gap: 10px;
+
+  svg {
+    color: ${({ theme }) => theme.primary};
+  }
 `;

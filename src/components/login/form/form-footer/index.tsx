@@ -9,7 +9,10 @@ export default function FormFooter() {
     <StyledFormFooter className={chivo.className}>
       <button
         className="button-login"
+        type="submit"
         onClick={() => router.push("/dashboard")}
+        form="login-form"
+        value="Submit"
       >
         SE CONNECTER
       </button>

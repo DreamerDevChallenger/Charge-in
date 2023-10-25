@@ -1,16 +1,16 @@
 "use client";
 
-import DashboardTitle from "@/components/dashboard/title";
 import styled from "styled-components";
 import { PropProfil } from "@/app/dashboard/house/in-progress/profil/[id]/layout";
-import { PersonLargeIcon } from "@/utils/icon";
+import PageTitle from "@/components/materials/page-title";
+import { Person, PersonOutline } from "@mui/icons-material";
 
 export default function DashboardProfilHeader({ profilData }: PropProfil) {
   return (
     <StyledDashboardProfilHeader>
-      <DashboardTitle icon={PersonLargeIcon}>
+      <PageTitle icon={PersonOutline}>
         {`${profilData?.first_name} ${profilData?.last_name}`}
-      </DashboardTitle>
+      </PageTitle>
     </StyledDashboardProfilHeader>
   );
 }

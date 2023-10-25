@@ -45,6 +45,20 @@ const StyledDahboard = styled.main`
       flex-direction: column;
       gap: 10px;
     }
+    .card-list-item {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        display: inline-block;
+        content: "";
+        background: ${({ theme }) => theme.primary};
+        width: 5px;
+        height: 5px;
+        margin-right: 10px;
+        border-radius: 100%;
+      }
+    }
 
     .card-wrapper {
       display: flex;

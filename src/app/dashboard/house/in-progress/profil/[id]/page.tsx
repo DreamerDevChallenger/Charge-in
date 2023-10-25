@@ -11,6 +11,7 @@ import { selectUser } from "@/redux/selectors";
 import DashboardProfilDiscount from "@/components/dashboard/house/profil/discount";
 import DashboardProfilInstaller from "@/components/dashboard/house/profil/installer";
 import DashboardProfilCharging from "@/components/dashboard/house/profil/charging";
+import DashboardProfilDocument from "@/components/dashboard/house/profil/document";
 
 export default function DashboardHouseInProgressProfil({
   params,
@@ -27,6 +28,7 @@ export default function DashboardHouseInProgressProfil({
       <DashboardProfilLink profilData={profilData} />
       <DashboardProfilHeader profilData={profilData} />
       <DashboardProfilInformation />
+      <DashboardProfilDocument />
       <DashboardProfilCharging />
       <DashboardProfilInstaller />
       <DashboardProfilDiscount />

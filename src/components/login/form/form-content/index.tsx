@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function FormContent() {
   return (
-    <StyledFormContent method="post">
+    <StyledFormContent id="login-form" method="post">
       <FormControl
         label="Email"
         htmlFor="email"

@@ -58,4 +58,41 @@ const StyledHeaderDashboard = styled.header`
   .username {
     color: ${({ theme }) => theme.primary};
   }
+
+  .pop-in {
+    z-index: 5;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 18px 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 16px 0px rgba(180, 189, 189, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    width: 100%;
+
+    .title {
+      font-weight: 600;
+      font-size: 18px;
+      padding: 0 24px;
+    }
+
+    .pop-in-footer {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px 0;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pop-in-item {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 20px 24px;
+    }
+  }
 `;

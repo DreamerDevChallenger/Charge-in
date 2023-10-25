@@ -1,8 +1,8 @@
 import { chivo } from "@/utils/font";
-import { EyeOutlineIcon, EyeOutlineOffIcon } from "@/utils/icon";
 import { useState } from "react";
 import styled from "styled-components";
-import Icon from "../icon";
+
+import { VisibilityOff, VisibilityOutlined } from "@mui/icons-material/";
 
 interface FormControlProps {
   label: string;
@@ -32,13 +32,11 @@ export default function FormControl({
               className={chivo.className}
               placeholder={placeholder}
               autoComplete="current-password"
+              pattern={"^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$"}
+              required
             />
             <div className="icon-container" onClick={() => setShow(!show)}>
-              {show ? (
-                <Icon Icon={EyeOutlineOffIcon} width={24} height={24} />
-              ) : (
-                <Icon Icon={EyeOutlineIcon} width={24} height={24} />
-              )}
+              {show ? <VisibilityOff /> : <VisibilityOutlined />}
             </div>
           </>
         ) : (

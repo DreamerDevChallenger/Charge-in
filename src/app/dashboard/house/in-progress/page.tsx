@@ -1,14 +1,13 @@
 "use client";
 
 import DashboardHouseTable from "@/components/dashboard/house/table";
-import DashboardTitle from "@/components/dashboard/title";
 import PageTitle from "@/components/materials/page-title";
-import { HomeLargeIcon } from "@/utils/icon";
+import { House, HouseOutlined } from "@mui/icons-material";
 
 export default function DashboardHouseInProgress() {
   return (
     <>
-      <DashboardTitle icon={HomeLargeIcon} />
+      <PageTitle icon={HouseOutlined}>Maison</PageTitle>
       <DashboardHouseTable />
     </>
   );

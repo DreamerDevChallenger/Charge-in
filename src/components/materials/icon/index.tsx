@@ -39,6 +39,8 @@ const StyledIcon = styled.div<{
   display: flex;
   width: ${({ width }) => width}px;
   height: ${({ height }) => height}px;
+  min-width: ${({ width }) => width}px;
+  min-height: ${({ width }) => width}px;
 
   svg {
     width: 100%;
