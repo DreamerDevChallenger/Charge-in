@@ -1,21 +1,16 @@
+"use client";
+
 import FastAction from "@/components/dashboard/home/fast-action";
 import DashboardObjectives from "@/components/dashboard/home/objective";
 import DashboardStatistic from "@/components/dashboard/home/statistic";
+import DashboardTitle from "@/components/dashboard/title";
 
-import PageTitle from "@/components/materials/page-title";
-import { FlashOutlinedIcon } from "@/utils/icon";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Charge-in | Dashboard",
-};
+import { FlashLargeIcon } from "@/utils/icon";
 
 export default function Dashboard() {
   return (
     <>
-      <section>
-        <PageTitle icon={FlashOutlinedIcon}>Tableau de bord</PageTitle>
-      </section>
+      <DashboardTitle icon={FlashLargeIcon} />
       <DashboardObjectives />
       <DashboardStatistic />
       <FastAction />

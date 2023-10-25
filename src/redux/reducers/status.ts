@@ -1,4 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 export const PENDING = "pending";
 export const VOID = "void";
@@ -33,7 +34,7 @@ export const statusReducer = {
     }
   },
 
-  resolved: (draft: PropsStatus, action: PayloadAction) => {
+  resolved: (draft: any, action: any) => {
     switch (draft.status) {
       case PENDING:
         draft.data = action.payload;

@@ -1,8 +1,14 @@
-"use client";
-
-import DashboardProfilHeader from "@/components/dashboard/house/profil/header";
-import { useAppSelector } from "@/redux/hooks";
-import { selectUser } from "@/redux/selectors";
+export interface PropProfil {
+  profilData:
+    | {
+        id: number;
+        first_name: string;
+        last_name: string;
+        charging: number;
+        step: number;
+      }
+    | undefined;
+}
 
 export default function RootLayout({
   children,
@@ -11,14 +17,5 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { id: string };
 }) {
-  const { data } = useAppSelector(selectUser);
-
-  const profilData = data.find((item) => item.id === JSON.parse(params.id));
-
-  return (
-    <>
-      <DashboardProfilHeader profilData={profilData} />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

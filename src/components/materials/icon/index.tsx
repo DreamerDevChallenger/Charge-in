@@ -7,11 +7,24 @@ interface PictureProp {
   width: number;
   height: number;
   stroke?: "primary" | string;
+  fill?: "primary";
 }
 
-export default function Icon({ Icon, width, height, stroke }: PictureProp) {
+export default function Icon({
+  Icon,
+  width,
+  height,
+  stroke,
+  fill,
+}: PictureProp) {
   return (
-    <StyledIcon stroke={stroke} width={width} height={height} className="icon">
+    <StyledIcon
+      fill={fill}
+      stroke={stroke}
+      width={width}
+      height={height}
+      className="icon"
+    >
       <Icon />
     </StyledIcon>
   );
@@ -20,7 +33,8 @@ export default function Icon({ Icon, width, height, stroke }: PictureProp) {
 const StyledIcon = styled.div<{
   width: number;
   height: number;
-  stroke?: string;
+  stroke?: "primary" | string;
+  fill?: "primary";
 }>`
   display: flex;
   width: ${({ width }) => width}px;
@@ -43,6 +57,16 @@ const StyledIcon = styled.div<{
           : stroke === "white"
           ? theme.white
           : stroke === "black" && theme.black
-      }`}
+      }`};
+
+    ${({ fill, theme }) =>
+      fill &&
+      `fill:${
+        fill === "primary"
+          ? theme.primary
+          : fill === "white"
+          ? theme.white
+          : fill === "black" && theme.black
+      }`};
   }
 `;

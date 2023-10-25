@@ -24,7 +24,7 @@ const StyledHamburgerMenu = styled.button`
   position: absolute;
   cursor: pointer;
   right: -15px;
-  top: 30px;
+  top: 25px;
   height: 21px;
   width: 28px;
   transform: translateX(100%);

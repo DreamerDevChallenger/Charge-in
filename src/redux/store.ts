@@ -1,10 +1,12 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-import toggleNavbarReducer from "@/redux/reducers/toggle-navbar";
-import userReducer from "@/redux/reducers/users";
-
 import { persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
+
+import toggleNavbarReducer from "@/redux/reducers/toggle-navbar";
+import userReducer from "@/redux/reducers/users";
+import overlayReducer from "@/redux/reducers/overlay";
+import currentUserReducer from "@/redux/reducers/currentUser";
 
 const createNoopStorage = () => {
   return {
@@ -28,12 +30,14 @@ const storage =
 const reducers = combineReducers({
   toggleNavbar: toggleNavbarReducer,
   user: userReducer,
+  currentUser: currentUserReducer,
+  overlay: overlayReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["toggleNavbar"],
+  blacklist: ["user", "overlay", "currentUser"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

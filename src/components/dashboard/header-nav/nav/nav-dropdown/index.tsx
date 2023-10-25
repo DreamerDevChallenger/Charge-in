@@ -16,7 +16,11 @@ export default function NavDropdown({ children, icon, path }: NavItemProp) {
 
   return (
     <StyledNavDropdown
-      className={`${isOpen || pathname === urlInProgress ? "open" : "close"}`}
+      className={`${
+        isOpen || pathname.includes(urlInProgress || urlArchived)
+          ? "open"
+          : "close"
+      }`}
     >
       <div className="nav-link" onClick={() => setIsOpen(!isOpen)}>
         <Icon Icon={icon} width={20} height={20} />

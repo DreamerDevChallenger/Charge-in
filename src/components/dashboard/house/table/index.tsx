@@ -2,7 +2,7 @@
 
 import { useAppSelector } from "@/redux/hooks";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TableContainer from "./table-container";
 import TableHeader from "./table-header";
@@ -14,18 +14,27 @@ export default function DashboardHouseTable() {
 
   const [current, setCurrent] = useState<number>(1);
   const [entries, setEntries] = useState<number>(5);
+  const [stateTable, setStateTable] = useState<any>([]);
 
   const indexOfLastPage = current * entries;
   const indexOfFirstPage = indexOfLastPage - entries;
-  const currentData = data.slice(indexOfFirstPage, indexOfLastPage);
+  const currentData = stateTable.slice(indexOfFirstPage, indexOfLastPage);
 
   const paginate = (pageNumber: number) => {
     return setCurrent(pageNumber);
   };
 
+  useEffect(() => {
+    setStateTable(data);
+  }, [data]);
+
   return (
     <StyledDashboardHouseTable>
-      <TableHeader />
+      <TableHeader
+        stateTable={stateTable}
+        setStateTable={setStateTable}
+        paginate={paginate}
+      />
       <div className="table-wrapper">
         <TableContainer currentData={currentData} />
       </div>

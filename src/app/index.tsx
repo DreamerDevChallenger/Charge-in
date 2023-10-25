@@ -56,6 +56,8 @@ const StyledApp = styled.div`
   &.app {
     flex-direction: column;
     gap: 0px;
+    min-height: 100vh;
+    height: auto;
     main {
       padding: 20px;
       section {
@@ -70,6 +72,7 @@ const StyledApp = styled.div`
     .main-dashboard {
       padding: 30px 20px 30px;
       gap: 30px;
+      overflow: auto;
     }
   }
 
@@ -77,8 +80,6 @@ const StyledApp = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: auto;
-    min-height: 100%;
   }
 
   @media (min-width: 768px) {

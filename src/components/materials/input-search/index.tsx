@@ -3,8 +3,16 @@ import Icon from "../icon";
 import { SearchIcon } from "@/utils/icon";
 import { useState } from "react";
 
-export default function InputSearch() {
+export default function InputSearch({
+  onSearch,
+}: {
+  onSearch: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) {
   const [isFocus, setIsFocus] = useState<boolean>(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    onSearch(e);
+  };
 
   return (
     <StyledInputSearch>
@@ -13,6 +21,7 @@ export default function InputSearch() {
         type="text"
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
+        onChange={() => {}}
       />
     </StyledInputSearch>
   );

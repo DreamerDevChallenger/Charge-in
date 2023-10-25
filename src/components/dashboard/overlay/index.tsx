@@ -1,9 +1,18 @@
 "use client";
 
+import { useAppSelector } from "@/redux/hooks";
+import { selectOverlay } from "@/redux/selectors";
 import styled from "styled-components";
 
 export default function Overlay() {
-  return <StyledOverlay id="overlay"></StyledOverlay>;
+  const { isOpen } = useAppSelector(selectOverlay);
+
+  return (
+    <StyledOverlay
+      id="overlay"
+      className={isOpen ? "open" : "close"}
+    ></StyledOverlay>
+  );
 }
 
 const StyledOverlay = styled.div`
@@ -14,6 +23,16 @@ const StyledOverlay = styled.div`
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
-  visibility: hidden;
   z-index: 10;
+  transition: 0.5s;
+
+  &.close {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
 `;

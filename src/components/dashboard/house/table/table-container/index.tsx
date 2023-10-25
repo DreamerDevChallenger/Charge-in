@@ -35,29 +35,30 @@ export default function TableContainer({
           <tr key={index} className="table-row">
             {dataTable.map((title, index) => (
               <td key={index} className={`table-item`}>
-                <Link href={`${pathname}/profil/${item.id}`}>
-                  <Text
-                    className={`${
-                      title === "Étape" &&
-                      `step ${
-                        item.step === 1
-                          ? "first"
-                          : item.step === 2
-                          ? "second"
-                          : item.step === 3
-                          ? "third"
-                          : item.step === 4 && "fourth"
-                      }`
-                    }`}
-                  >
-                    {title === "Nom" &&
-                      `${item.first_name.slice(0, 1)}.${item.last_name}`}
-                    {title === "Borne choisie" &&
-                      `Borne Modèle ${item.charging}`}
-                    {title === "Devis" && `###`}
-                    {title === "Étape" && `Étape ${item.step}`}
-                  </Text>
-                </Link>
+                <Text
+                  className={`${
+                    title === "Étape" &&
+                    `step ${
+                      item.step === 1
+                        ? "first"
+                        : item.step === 2
+                        ? "second"
+                        : item.step === 3
+                        ? "third"
+                        : item.step === 4 && "fourth"
+                    }`
+                  }`}
+                >
+                  {title === "Nom" && (
+                    <Link href={`${pathname}/profil/${item.id}`}>
+                      {item.first_name.slice(0, 1)}.{item.last_name}
+                    </Link>
+                  )}
+
+                  {title === "Borne choisie" && `Borne Modèle ${item.charging}`}
+                  {title === "Devis" && `###`}
+                  {title === "Étape" && `Étape ${item.step}`}
+                </Text>
               </td>
             ))}
           </tr>

@@ -1,17 +1,14 @@
-import DashboardHouseHeader from "@/components/dashboard/house/header";
+"use client";
+
 import DashboardHouseTable from "@/components/dashboard/house/table";
+import DashboardTitle from "@/components/dashboard/title";
 import PageTitle from "@/components/materials/page-title";
 import { HomeLargeIcon } from "@/utils/icon";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Charge-in | House - In Progress",
-};
 
 export default function DashboardHouseInProgress() {
   return (
     <>
-      <DashboardHouseHeader />
+      <DashboardTitle icon={HomeLargeIcon} />
       <DashboardHouseTable />
     </>
   );
