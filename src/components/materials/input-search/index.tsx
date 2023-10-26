@@ -16,12 +16,13 @@ export default function InputSearch({
 
   return (
     <StyledInputSearch>
-      {!isFocus && <Icon width={14} height={14} Icon={Search} />}
+      {!isFocus && <Icon width={18} height={18} Icon={Search} />}
       <input
         type="text"
         onFocus={() => setIsFocus(true)}
         onBlur={() => setIsFocus(false)}
         onChange={handleChange}
+        placeholder="Rechercher"
       />
     </StyledInputSearch>
   );
@@ -33,7 +34,18 @@ const StyledInputSearch = styled.div`
   border-radius: 6px;
   background: ${({ theme }) => theme.white};
   display: flex;
+  align-items: center;
   gap: 8px;
+
+  .icon {
+    color: ${({ theme }) => theme.gray_second};
+  }
+
   input {
+    font-size: 16px;
+    width: 100%;
+    &::placeholder {
+      color: ${({ theme }) => theme.gray_second};
+    }
   }
 `;

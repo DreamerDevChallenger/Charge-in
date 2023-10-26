@@ -107,7 +107,7 @@ const StyledTableFooter = styled.div`
     position: relative;
 
     .entries {
-      color: #8fa2a2;
+      color: ${({ theme }) => theme.gray_second};
     }
 
     .btn-entries {
@@ -144,6 +144,6 @@ const StyledTableFooter = styled.div`
   }
 
   .icon {
-    color: #8fa2a2;
+    color: ${({ theme }) => theme.gray_second};
   }
 `;

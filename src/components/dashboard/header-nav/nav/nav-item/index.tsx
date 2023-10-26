@@ -10,7 +10,7 @@ import { toggleNavbar } from "@/redux/reducers/toggle-navbar"; */
 export default function NavItem({ children, icon, path }: NavItemProp) {
   const pathname = usePathname();
   /* const dispatch = useAppDispatch(); */
-  const url = `/dashboard/#/${path}`;
+  const url = `/dashboard/#`;
 
   return (
     <StyledNavItem

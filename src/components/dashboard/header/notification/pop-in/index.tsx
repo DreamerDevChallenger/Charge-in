@@ -22,7 +22,10 @@ export default function NotificationPopIn() {
               <ProfilAvatar width={36} height={36} />
               <div className="pop-in-content">
                 <Text>
-                  {item.first_name} {item.last_name}
+                  <strong>
+                    {item.first_name} {item.last_name}
+                  </strong>{" "}
+                  a ajouté un installateur
                 </Text>
                 <Text className="day">Il y a 3 jours </Text>
               </div>

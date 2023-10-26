@@ -17,9 +17,11 @@ export default function DashboardNav() {
   return (
     <StyledDashboardNav className={chivo.className}>
       <ul>
-        <NavItem icon={Window} path="/dashboard">
-          Accueil
-        </NavItem>
+        <li className="nav-item">
+          <NavItem icon={Window} path="/dashboard">
+            Accueil
+          </NavItem>
+        </li>
       </ul>
       {dataNav.map((list, index) => (
         <div key={index} className="nav-items-container">

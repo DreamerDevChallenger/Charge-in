@@ -4,8 +4,8 @@ import Text from "@/components/materials/text";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { PropUser } from "@/redux/reducers/users";
-/* import { selectUser } from "@/redux/selectors";
-import { useAppSelector } from "@/redux/hooks"; */
+import Icon from "@/components/materials/icon";
+import { Delete, Edit, MoreVert } from "@mui/icons-material";
 
 export default function TableContainer({
   currentData,
@@ -31,31 +31,43 @@ export default function TableContainer({
             <tr key={index} className="table-row">
               {dataTable.map((title, index) => (
                 <td key={index} className={`table-item`}>
-                  <Text
-                    className={`${
-                      title === "Étape" &&
-                      `step ${
-                        item.step === 1
-                          ? "first"
-                          : item.step === 2
-                          ? "second"
-                          : item.step === 3
-                          ? "third"
-                          : item.step === 4 && "fourth"
-                      }`
-                    }`}
-                  >
-                    {title === "Nom" && (
-                      <Link href={`${pathname}/profil/${item.id}`}>
+                  {title === "Nom" && (
+                    <Link href={`${pathname}/profil/${item.id}`}>
+                      <Text>
                         {item.first_name.slice(0, 1)}.{item.last_name}
-                      </Link>
-                    )}
+                      </Text>
+                    </Link>
+                  )}
 
-                    {title === "Borne choisie" &&
-                      `Borne Modèle ${item.charging}`}
-                    {title === "Devis" && `###`}
-                    {title === "Étape" && `Étape ${item.step}`}
-                  </Text>
+                  {title === "Borne choisie" && (
+                    <Text>Borne Modèle {item.charging}</Text>
+                  )}
+                  {title === "Devis" && <Text>`###`</Text>}
+                  {title === "Étape" && (
+                    <Text
+                      className={`
+                        step ${
+                          item.step === 1
+                            ? "first"
+                            : item.step === 2
+                            ? "second"
+                            : item.step === 3
+                            ? "third"
+                            : item.step === 4 && "fourth"
+                        }`}
+                    >
+                      Étape {item.step}
+                    </Text>
+                  )}
+                  {title === "Actions" && (
+                    <div className="action">
+                      <Link href={`${pathname}/profil/${item.id}`}>
+                        <Icon Icon={Edit} width={16} height={16} />
+                      </Link>
+                      <Icon Icon={Delete} width={16} height={16} />
+                      <Icon Icon={MoreVert} width={16} height={16} />
+                    </div>
+                  )}
                 </td>
               ))}
             </tr>
@@ -102,12 +114,17 @@ const StyledTableContainer = styled.table`
         background: rgba(240, 116, 161, 0.1);
       }
     }
+    .action {
+      display: flex;
+      gap: 4px;
+      color: ${({ theme }) => theme.secondary};
+    }
   }
 
   .table-header {
     .table-item {
       font-size: 13px;
-      color: #8fa2a2;
+      color: ${({ theme }) => theme.gray_second};
       white-space: nowrap;
       font-weight: 400;
       text-align: start;

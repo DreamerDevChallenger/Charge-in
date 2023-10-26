@@ -18,6 +18,8 @@ const StyledProfilAvatar = styled.div<PropProfilAvatar>`
   border-radius: 100%;
   height: ${({ height }) => height}px;
   width: ${({ width }) => width}px;
+  min-height: ${({ height }) => height}px;
+  min-width: ${({ width }) => width}px;
   display: flex;
   justify-content: center;
   align-items: center;

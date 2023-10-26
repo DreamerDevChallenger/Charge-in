@@ -1,4 +1,6 @@
+import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
+import { KeyboardArrowDown } from "@mui/icons-material";
 import styled from "styled-components";
 
 export default function ButtonContainer() {
@@ -7,6 +9,9 @@ export default function ButtonContainer() {
       <div className="left">
         <button className="step">
           <Text>Étape</Text>
+          <div className="icon-container">
+            <Icon Icon={KeyboardArrowDown} width={24} height={24} />
+          </div>
         </button>
       </div>
       <div className="right">
@@ -15,6 +20,9 @@ export default function ButtonContainer() {
         </button>
         <button className="mail">
           <Text>Envoyer un mail</Text>
+          <div className="icon-container">
+            <Icon Icon={KeyboardArrowDown} width={24} height={24} />
+          </div>
         </button>
       </div>
     </StyledButtonContainer>
@@ -24,22 +32,36 @@ export default function ButtonContainer() {
 const StyledButtonContainer = styled.section`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   gap: 16px;
 
+  .left {
+    flex: 1;
+    margin: auto;
+  }
+
   .right {
     display: flex;
-    justify-content: center;
+
     gap: 16px;
     flex-wrap: wrap;
   }
 
   button {
-    height: 45px;
-    padding: 10px 22px;
     font-size: 18px;
     border-radius: 8px;
+    display: flex;
+
+    .text {
+      padding: 10px 22px;
+      line-height: 25px;
+    }
+
+    .icon-container {
+      padding: 10px;
+      height: 100%;
+      border-left: 1px solid ${({ theme }) => theme.white};
+    }
 
     &.statut {
       color: ${({ theme }) => theme.primary};
