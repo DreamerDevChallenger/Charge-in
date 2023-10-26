@@ -12,13 +12,13 @@ import DashboardProfilDiscount from "@/components/dashboard/house/profil/discoun
 import DashboardProfilInstaller from "@/components/dashboard/house/profil/installer";
 import DashboardProfilCharging from "@/components/dashboard/house/profil/charging";
 import DashboardProfilDocument from "@/components/dashboard/house/profil/document";
+import DashboardProfilCommentary from "@/components/dashboard/house/profil/commentary";
+import ButtonContainer from "@/components/dashboard/house/profil/button-container";
 
 export default function DashboardHouseInProgressProfil({
   params,
-  children,
 }: {
   params: { id: string };
-  children: React.ReactNode;
 }) {
   const { data } = useAppSelector(selectUser);
 
@@ -27,7 +27,9 @@ export default function DashboardHouseInProgressProfil({
     <>
       <DashboardProfilLink profilData={profilData} />
       <DashboardProfilHeader profilData={profilData} />
+      <ButtonContainer />
       <DashboardProfilInformation />
+      <DashboardProfilCommentary />
       <DashboardProfilDocument />
       <DashboardProfilCharging />
       <DashboardProfilInstaller />

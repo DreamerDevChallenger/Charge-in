@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Dispatch, SetStateAction } from "react";
-import { selectUser } from "@/redux/selectors";
-import { useAppSelector } from "@/redux/hooks";
+import { Dispatch, SetStateAction, useState } from "react";
 import Icon from "@/components/materials/icon";
 import { ArrowBackIos } from "@mui/icons-material";
+import { PropUser } from "@/redux/reducers/users";
+import Text from "@/components/materials/text";
 
 export default function TableFooter({
   setEntries,
@@ -17,22 +17,10 @@ export default function TableFooter({
   paginate: (e: number) => void;
   entries: number;
   current: number;
-  currentData: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    charging: number;
-    step: number;
-  }[];
-  stateTable: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    charging: number;
-    step: number;
-  }[];
+  currentData: PropUser[];
+  stateTable: PropUser[];
 }) {
-  const { data } = useAppSelector(selectUser);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const options = [
     { value: 5, name: 5 },
@@ -40,22 +28,37 @@ export default function TableFooter({
     { value: 25, name: 25 },
   ];
 
-  const handleChange = (e: any) => {
-    setEntries(parseInt(e.target.value));
+  const handleChange = (e: number) => {
+    setEntries(e);
     paginate(1);
+    setIsOpen(false);
   };
+
+  const dataRange = Math.ceil(stateTable.length / entries);
 
   return (
     <StyledTableFooter>
-      <div className="lign-page">
-        Lignes par page :{" "}
-        <select onChange={handleChange}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.name}
-            </option>
-          ))}
-        </select>
+      <div className="entries-container">
+        Lignes par page : <Text className="entries">{entries} </Text>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`btn-entries ${isOpen ? "open" : "close"}`}
+        >
+          <Icon Icon={ArrowBackIos} width={16} height={16} />
+        </button>
+        {isOpen && (
+          <div className="select">
+            {options.map((option) => (
+              <div
+                key={option.value}
+                className="option"
+                onClick={() => handleChange(option.value)}
+              >
+                {option.name}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="showing">
         {entries * current - entries + 1}-
@@ -69,13 +72,10 @@ export default function TableFooter({
         >
           <Icon Icon={ArrowBackIos} width={16} height={16} />
         </button>
+
         <button
           className="btn next"
-          onClick={
-            current < data.length / entries
-              ? () => paginate(current + 1)
-              : () => {}
-          }
+          onClick={current < dataRange ? () => paginate(current + 1) : () => {}}
         >
           <Icon Icon={ArrowBackIos} width={16} height={16} />
         </button>
@@ -93,6 +93,7 @@ const StyledTableFooter = styled.div`
 
   .btn-container {
     display: flex;
+    align-items: center;
     gap: 8px;
     .previous {
       transform: rotate(0);
@@ -102,7 +103,47 @@ const StyledTableFooter = styled.div`
     }
   }
 
-  select {
-    background: red;
+  .entries-container {
+    position: relative;
+
+    .entries {
+      color: #8fa2a2;
+    }
+
+    .btn-entries {
+      .icon {
+        transform: rotateZ(-90deg);
+      }
+
+      &.open {
+        .icon {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    .select {
+      position: absolute;
+      bottom: 30px;
+      right: 0;
+      background: white;
+      transform: translateX(25%);
+      border-radius: 2px;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      text-align: right;
+
+      .option {
+        cursor: pointer;
+        padding: 2px 8px;
+
+        &:hover {
+          background: #fafafa;
+        }
+      }
+    }
+  }
+
+  .icon {
+    color: #8fa2a2;
   }
 `;

@@ -113,7 +113,7 @@ export default function DashboardProfilcard() {
 
 const StyledDashboardProfilInformation = styled.section`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
   flex-wrap: wrap;
   gap: 30px;

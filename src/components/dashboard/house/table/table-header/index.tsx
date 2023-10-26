@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useAppSelector } from "@/redux/hooks";
 import { selectUser } from "@/redux/selectors";
 import InputSearch from "@/components/materials/input-search";
+import { PropUser } from "@/redux/reducers/users";
 
 export default function TableHeader({
   stateTable,
@@ -11,13 +12,7 @@ export default function TableHeader({
 }: {
   paginate: (e: number) => void;
   setStateTable: (e: any) => void;
-  stateTable: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    charging: number;
-    step: number;
-  }[];
+  stateTable: PropUser[];
 }) {
   const { data } = useAppSelector(selectUser);
 
@@ -34,7 +29,6 @@ export default function TableHeader({
     );
     paginate(1);
     setStateTable(search);
-    console.log(data);
   };
 
   return (

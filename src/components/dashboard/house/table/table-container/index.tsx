@@ -3,19 +3,14 @@ import { dataTable } from "./data";
 import Text from "@/components/materials/text";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { PropUser } from "@/redux/reducers/users";
 /* import { selectUser } from "@/redux/selectors";
 import { useAppSelector } from "@/redux/hooks"; */
 
 export default function TableContainer({
   currentData,
 }: {
-  currentData: {
-    id: number;
-    first_name: string;
-    last_name: string;
-    charging: number;
-    step: number;
-  }[];
+  currentData: PropUser[];
 }) {
   const pathname = usePathname();
 
@@ -31,38 +26,45 @@ export default function TableContainer({
         </tr>
       </thead>
       <tbody>
-        {currentData.map((item, index) => (
-          <tr key={index} className="table-row">
-            {dataTable.map((title, index) => (
-              <td key={index} className={`table-item`}>
-                <Text
-                  className={`${
-                    title === "Étape" &&
-                    `step ${
-                      item.step === 1
-                        ? "first"
-                        : item.step === 2
-                        ? "second"
-                        : item.step === 3
-                        ? "third"
-                        : item.step === 4 && "fourth"
-                    }`
-                  }`}
-                >
-                  {title === "Nom" && (
-                    <Link href={`${pathname}/profil/${item.id}`}>
-                      {item.first_name.slice(0, 1)}.{item.last_name}
-                    </Link>
-                  )}
+        {currentData.length ? (
+          currentData.map((item, index) => (
+            <tr key={index} className="table-row">
+              {dataTable.map((title, index) => (
+                <td key={index} className={`table-item`}>
+                  <Text
+                    className={`${
+                      title === "Étape" &&
+                      `step ${
+                        item.step === 1
+                          ? "first"
+                          : item.step === 2
+                          ? "second"
+                          : item.step === 3
+                          ? "third"
+                          : item.step === 4 && "fourth"
+                      }`
+                    }`}
+                  >
+                    {title === "Nom" && (
+                      <Link href={`${pathname}/profil/${item.id}`}>
+                        {item.first_name.slice(0, 1)}.{item.last_name}
+                      </Link>
+                    )}
 
-                  {title === "Borne choisie" && `Borne Modèle ${item.charging}`}
-                  {title === "Devis" && `###`}
-                  {title === "Étape" && `Étape ${item.step}`}
-                </Text>
-              </td>
-            ))}
+                    {title === "Borne choisie" &&
+                      `Borne Modèle ${item.charging}`}
+                    {title === "Devis" && `###`}
+                    {title === "Étape" && `Étape ${item.step}`}
+                  </Text>
+                </td>
+              ))}
+            </tr>
+          ))
+        ) : (
+          <tr className="table-row">
+            <td className="table-item">Profil introuvable</td>
           </tr>
-        ))}
+        )}
       </tbody>
     </StyledTableContainer>
   );
@@ -103,8 +105,6 @@ const StyledTableContainer = styled.table`
   }
 
   .table-header {
-    overflow: auto;
-
     .table-item {
       font-size: 13px;
       color: #8fa2a2;

@@ -39,7 +39,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["user", "overlay", "currentUser"],
+  blacklist: ["overlay", "currentUser"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

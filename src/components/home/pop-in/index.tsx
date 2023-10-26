@@ -1,5 +1,3 @@
-import Icon from "@/components/materials/icon";
-import { LoginIcon } from "@/utils/icon";
 import { Login } from "@mui/icons-material";
 import Link from "next/link";
 import styled from "styled-components";

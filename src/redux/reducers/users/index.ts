@@ -1,6 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { statusReducer } from "../status";
-import data_user from "@/mocks/data.json";
+import data_user from "@/mocks/dataUser.json";
+
+export interface PropUser {
+  id: number;
+  first_name: string;
+  last_name: string;
+  charging: number;
+  step: number;
+}
 
 const initialState = {
   status: "void",

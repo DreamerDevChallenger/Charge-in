@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { chivo } from "@/utils/font";
 import Logo from "../materials/logo";
 import { ArrowBackIos } from "@mui/icons-material";
+import Text from "../materials/text";
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,9 +13,9 @@ export default function Header() {
   return (
     <StyledHeader>
       {pathname !== "/" && (
-        <Link href={"/"} className={`${chivo.className} link-to-home`}>
+        <Link href={"/"} className={`link-to-home`}>
           <ArrowBackIos />
-          <span>Retour vers la page d&rsquo;accueil</span>
+          <Text>Retour vers la page d&rsquo;accueil</Text>
         </Link>
       )}
 
@@ -46,8 +46,5 @@ const StyledHeader = styled.header`
     padding: 42px 56px;
     flex-direction: row;
     justify-content: space-between;
-    .logo-container {
-      float: right;
-    }
   }
 `;

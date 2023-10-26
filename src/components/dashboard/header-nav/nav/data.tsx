@@ -1,16 +1,12 @@
 import {
-  CarOutlinedIcon,
-  ConstructOutlinedIcon,
-  EaselOutlinedIcon,
-} from "@/utils/icon";
-
-import {
   HomeOutlined,
   BusinessOutlined,
   PersonOutlined,
   BoltOutlined,
   Security,
   DirectionsCarOutlined,
+  ConstructionOutlined,
+  TrackChanges,
 } from "@mui/icons-material";
 
 export const dataNav = [
@@ -81,18 +77,18 @@ export const dataNav = [
         dropdown: false,
         path: "/car",
       },
-      /*   {
+      {
         title: "Accessoires",
-        icon_off: ConstructOutlinedIcon,
+        icon_off: ConstructionOutlined,
         dropdown: false,
         path: "/accessory",
-      }, */
-      /*   {
+      },
+      {
         title: "Objectifs",
-        icon_off: EaselOutlinedIcon,
+        icon_off: TrackChanges,
         dropdown: false,
         path: "/objective",
-      }, */
+      },
     ],
   },
 ];

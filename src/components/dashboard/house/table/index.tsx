@@ -8,13 +8,14 @@ import TableContainer from "./table-container";
 import TableHeader from "./table-header";
 import TableFooter from "./table-footer";
 import { selectUser } from "@/redux/selectors";
+import { PropUser } from "@/redux/reducers/users";
 
 export default function DashboardHouseTable() {
   const { data } = useAppSelector(selectUser);
 
   const [current, setCurrent] = useState<number>(1);
   const [entries, setEntries] = useState<number>(5);
-  const [stateTable, setStateTable] = useState<any>([]);
+  const [stateTable, setStateTable] = useState<PropUser[]>([]);
 
   const indexOfLastPage = current * entries;
   const indexOfFirstPage = indexOfLastPage - entries;
@@ -25,7 +26,7 @@ export default function DashboardHouseTable() {
   };
 
   useEffect(() => {
-    return () => setStateTable(data);
+    setStateTable(data);
   }, [data]);
 
   return (

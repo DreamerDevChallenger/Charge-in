@@ -15,7 +15,7 @@ export default function PageTitle({
   return (
     <StyledPageTitle>
       <Icon Icon={icon} width={36} height={36} />
-      <span>{children}</span>
+      {children}
     </StyledPageTitle>
   );
 }

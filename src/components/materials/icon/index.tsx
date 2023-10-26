@@ -48,9 +48,6 @@ const StyledIcon = styled.div<{
   }
 
   path {
-    width: 100%;
-    height: 100%;
-
     ${({ stroke, theme }) =>
       stroke &&
       `stroke:${

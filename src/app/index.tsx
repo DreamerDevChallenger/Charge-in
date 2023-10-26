@@ -7,6 +7,8 @@ import Header from "@/components/header";
 import DashboardHeaderNav from "@/components/dashboard/header-nav";
 
 export const appTheme = {
+  error: "#A94442",
+  success: "#27AE60",
   text: "#6A6A6A",
   text_secondary: "#6A93AC",
   border: "#DCE6E5",
@@ -20,6 +22,7 @@ export const appTheme = {
   black: "#000",
   white: "#FFF",
   gray: "#AFB2B6",
+  gray_second: "#8FA2A2",
 };
 
 const combineTheme = {
