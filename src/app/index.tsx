@@ -78,10 +78,10 @@ const StyledApp = styled.div`
 
   &.dashboard {
     flex-direction: row;
-    height: 100vh;
+    max-height: 100vh;
     overflow: hidden;
     .main-dashboard {
-      padding: 0;
+      padding: 30px 20px 30px;
       gap: 30px;
       overflow: auto;
     }
