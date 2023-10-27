@@ -27,8 +27,14 @@ export default function TableHeader({
         last_name: string;
         charging: number;
         step: number;
-      }) =>
-        state.first_name.toLowerCase().includes(e.target.value.toLowerCase())
+      }) => {
+        const event = e.target.value.toLowerCase();
+
+        return (
+          state.first_name.toLowerCase().includes(event) ||
+          state.last_name.toLowerCase().includes(event)
+        );
+      }
     );
     paginate(1);
     setStateTable(search);

@@ -53,7 +53,7 @@ export default function DashboardProfilLink({ profilData }: PropProfil) {
   );
 }
 
-const StyledDashboardProfilLink = styled.div`
+const StyledDashboardProfilLink = styled.section`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
