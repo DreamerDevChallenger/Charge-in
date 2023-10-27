@@ -32,6 +32,7 @@ const StyledHeaderDashboard = styled.header`
   justify-content: flex-end;
   flex-wrap: wrap-reverse;
   gap: 24px;
+  margin-bottom: 24px;
 
   &:before {
     content: "";
