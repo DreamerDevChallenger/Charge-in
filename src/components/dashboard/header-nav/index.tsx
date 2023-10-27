@@ -38,6 +38,7 @@ const StyledDashboardHeaderNav = styled.header`
     overflow: auto;
     height: 100%;
     padding: 36px 24px;
+
     &::-webkit-scrollbar {
       display: none;
     }

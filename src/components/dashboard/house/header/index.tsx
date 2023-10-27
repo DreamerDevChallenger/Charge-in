@@ -1,3 +1,5 @@
+"use client";
+
 import styled from "styled-components";
 import ButtonHouse from "./button";
 

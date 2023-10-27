@@ -3,14 +3,12 @@
 import SectionTitle from "@/components/materials/section-title";
 import styled from "styled-components";
 import { dataStatistic } from "./data";
+
 import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
 import ButtonDropdown from "./button-dropdown";
-import {
-  DragHandle,
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-} from "@mui/icons-material";
+import DashboardStatisticB2BB2C from "./b2b-b2c";
+import DashboardStatisticDigit from "./digit";
 
 export default function DashboardStatistic() {
   return (
@@ -32,49 +30,14 @@ export default function DashboardStatistic() {
                 <Text className="number">{item.subscription}</Text>
               </div>
             )}
-            <div className="card-digit">
-              <div className="number">
-                <Text>{item.number ? item.number : `${item.price}€`}</Text>
-
-                {item.price && <Text className="ht">HT</Text>}
-              </div>
-              <div
-                className={`${
-                  item.income === "same"
-                    ? "same"
-                    : item.income
-                    ? "positive"
-                    : !item.income && "negative"
-                } income`}
-              >
-                {item.income === "same" ? (
-                  <Icon Icon={DragHandle} width={24} height={24} />
-                ) : item.income ? (
-                  <Icon Icon={KeyboardArrowUp} width={24} height={24} />
-                ) : (
-                  !item.income && (
-                    <Icon Icon={KeyboardArrowDown} width={24} height={24} />
-                  )
-                )}
-                <Text>{item.value}%</Text>
-              </div>
-            </div>
-
+            <DashboardStatisticDigit
+              number={item.number}
+              income={item.income}
+              value={item.value}
+              price={item.price}
+            />
             {item.B2B && item.B2C && (
-              <div className="card-b2c-b2b">
-                <div className="b2c card-item">
-                  <Text>B2C</Text>
-                  <Text className="price">
-                    {item.B2C} {item.B2C !== "##" && "€ HT"}
-                  </Text>
-                </div>
-                <div className="b2b card-item">
-                  <Text>B2B</Text>
-                  <Text className="price">
-                    {item.B2B} {item.B2B !== "##" && "€ HT"}
-                  </Text>
-                </div>
-              </div>
+              <DashboardStatisticB2BB2C B2B={item.B2B} B2C={item.B2C} />
             )}
           </div>
         ))}
@@ -100,14 +63,13 @@ const StyledDashboardStatistic = styled.section`
   .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
     gap: 12px;
     max-width: 1500px;
     width: 100%;
 
     .card {
       padding: 26px 30px;
-      height: 100%;
-
       .card-header {
         display: flex;
         flex-direction: column;
@@ -116,6 +78,7 @@ const StyledDashboardStatistic = styled.section`
         .icon {
           color: ${({ theme }) => theme.primary};
         }
+
         .description {
           color: ${({ theme }) => theme.gray_second};
           font-size: 18px;
@@ -131,58 +94,9 @@ const StyledDashboardStatistic = styled.section`
           color: ${({ theme }) => theme.black};
         }
       }
-
-      .card-digit {
-        display: flex;
-        justify-content: space-between;
-        margin-top: auto;
-
-        .number {
-          font-size: 28px;
-          font-weight: 600;
-          display: flex;
-          gap: 10px;
-          align-items: center;
-
-          .ht {
-            color: ${({ theme }) => theme.gray_second};
-            font-size: 16px;
-            font-weight: 400;
-          }
-        }
-
-        .income {
-          display: flex;
-          align-items: center;
-          font-size: 18px;
-
-          &.positive {
-            color: ${({ theme }) => theme.success};
-          }
-          &.same {
-            color: ${({ theme }) => theme.gray_second};
-          }
-
-          &.negative {
-            color: ${({ theme }) => theme.error};
-          }
-        }
-      }
-
-      .card-b2c-b2b {
-        display: flex;
-        justify-content: space-between;
-        padding-right: 24px;
-        gap: 8px;
-        .card-item {
-          gap: 2px 12px;
-          .price {
-            color: ${({ theme }) => theme.background_secondary};
-          }
-        }
-      }
     }
   }
+
   @media (min-width: 768px) {
     justify-content: center;
   }

@@ -42,7 +42,9 @@ const StyledDocument = styled.section`
     align-items: center;
     flex-wrap: wrap;
     &.title {
-      gap: 18px 96px;
+      gap: 18px 64px;
+      border-bottom: 1px solid ${({ theme }) => theme.background_primary};
+      padding-bottom: 24px;
     }
     gap: 16px;
     .label {

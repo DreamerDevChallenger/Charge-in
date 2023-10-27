@@ -4,15 +4,18 @@ import { useAppSelector } from "@/redux/hooks";
 import { selectUser } from "@/redux/selectors";
 import InputSearch from "@/components/materials/input-search";
 import { PropUser } from "@/redux/reducers/users";
+import TableSort from "./sort";
 
 export default function TableHeader({
-  stateTable,
   setStateTable,
   paginate,
+  setSort,
+  sort,
 }: {
   paginate: (e: number) => void;
-  setStateTable: (e: any) => void;
-  stateTable: PropUser[];
+  setStateTable: (e: Array<any>) => void;
+  setSort: (e: "id" | "charging" | "step") => void;
+  sort: "id" | "charging" | "step";
 }) {
   const { data } = useAppSelector(selectUser);
 
@@ -37,6 +40,7 @@ export default function TableHeader({
         {data.length} {data.length <= 1 ? "résultat" : "résultats"}
       </Text>
       <InputSearch onSearch={onSearch} />
+      <TableSort setSort={setSort} sort={sort} />
     </StyledTableHeader>
   );
 }

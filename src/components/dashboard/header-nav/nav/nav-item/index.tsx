@@ -7,7 +7,12 @@ import Icon from "@/components/materials/icon";
 /* import { useAppDispatch } from "@/redux/hooks";
 import { toggleNavbar } from "@/redux/reducers/toggle-navbar"; */
 
-export default function NavItem({ children, icon, path }: NavItemProp) {
+export default function NavItem({
+  children,
+  icon_off,
+  icon_on,
+  path,
+}: NavItemProp) {
   const pathname = usePathname();
   /* const dispatch = useAppDispatch(); */
   const url = `/dashboard/#`;
@@ -18,7 +23,11 @@ export default function NavItem({ children, icon, path }: NavItemProp) {
       className={`${pathname === path ? "current" : ""}`}
       /*  onClick={() => dispatch(toggleNavbar())} */
     >
-      <Icon Icon={icon} width={20} height={20} />
+      <Icon
+        Icon={pathname === path ? icon_on : icon_off}
+        width={20}
+        height={20}
+      />
       <Text>{children}</Text>
     </StyledNavItem>
   );

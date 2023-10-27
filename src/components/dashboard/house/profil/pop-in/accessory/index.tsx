@@ -31,6 +31,7 @@ const StyledAccessory = styled.div`
   padding: 12px 16px;
   border-radius: 4px;
   cursor: pointer;
+
   input {
     width: 24px;
     height: 24px;
@@ -43,7 +44,22 @@ const StyledAccessory = styled.div`
     border: 1px solid ${({ theme }) => theme.primary};
 
     input {
+      position: relative;
       background: ${({ theme }) => theme.primary};
+
+      &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        top: 2.5px;
+        left: 8px;
+        width: 5px;
+        height: 13px;
+        border-style: solid;
+        border-color: #fff;
+        border-width: 0 2.5px 2.5px 0;
+        transform: rotate(45deg);
+      }
     }
   }
 

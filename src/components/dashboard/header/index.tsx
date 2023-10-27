@@ -45,7 +45,7 @@ const StyledHeaderDashboard = styled.header`
   }
 
   .hello {
-    color: #282828;
+    color: ${({ theme }) => theme.black_third};
     font-weight: 600;
   }
 

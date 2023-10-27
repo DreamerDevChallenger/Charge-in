@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { dataDate } from "./data";
 import Text from "@/components/materials/text";
 import Icon from "@/components/materials/icon";
-import { ArrowBackIos, ArrowBackIosNew } from "@mui/icons-material";
+import { ArrowBackIosNew } from "@mui/icons-material";
 
 export default function ButtonDropdown() {
   const [currentValue, setCurrent] = useState<string>(dataDate[0]);

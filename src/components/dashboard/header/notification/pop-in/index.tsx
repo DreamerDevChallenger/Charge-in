@@ -56,6 +56,7 @@ const StyledNotificationPopIn = styled.div`
     border-bottom: 1px solid #e5e5e5;
     padding: 20px 24px;
   }
+
   .pop-in-wrapper {
     padding: 24px;
   }
@@ -74,7 +75,7 @@ const StyledNotificationPopIn = styled.div`
       display: flex;
       flex-direction: column;
       .day {
-        color: #8fa2a2;
+        color: ${({ theme }) => theme.gray_second};
       }
     }
   }

@@ -1,7 +1,12 @@
 import styled from "styled-components";
 import { Dispatch, SetStateAction, useState } from "react";
 import Icon from "@/components/materials/icon";
-import { ArrowBackIos } from "@mui/icons-material";
+import {
+  ArrowBackIos,
+  ArrowForwardIos,
+  KeyboardArrowRight,
+  KeyboardArrowRightSharp,
+} from "@mui/icons-material";
 import { PropUser } from "@/redux/reducers/users";
 import Text from "@/components/materials/text";
 
@@ -67,17 +72,17 @@ export default function TableFooter({
       </div>
       <div className="btn-container">
         <button
-          className="btn previous"
+          className={`${current !== 1 ? "" : "disable "}btn next`}
           onClick={current !== 1 ? () => paginate(current - 1) : () => {}}
         >
           <Icon Icon={ArrowBackIos} width={16} height={16} />
         </button>
 
         <button
-          className="btn next"
+          className={`${current < dataRange ? "" : "disable "}btn next`}
           onClick={current < dataRange ? () => paginate(current + 1) : () => {}}
         >
-          <Icon Icon={ArrowBackIos} width={16} height={16} />
+          <Icon Icon={ArrowForwardIos} width={16} height={16} />
         </button>
       </div>
     </StyledTableFooter>
@@ -95,11 +100,11 @@ const StyledTableFooter = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
-    .previous {
-      transform: rotate(0);
-    }
-    .next {
-      transform: rotate(180deg);
+
+    .btn {
+      &.disable {
+        visibility: hidden;
+      }
     }
   }
 
@@ -117,7 +122,7 @@ const StyledTableFooter = styled.div`
 
       &.open {
         .icon {
-          transform: rotate(90deg);
+          transform: rotate(90deg) translateX(50%);
         }
       }
     }

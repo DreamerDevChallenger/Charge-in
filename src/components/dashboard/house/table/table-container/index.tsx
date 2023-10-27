@@ -42,7 +42,7 @@ export default function TableContainer({
                   {title === "Borne choisie" && (
                     <Text>Borne Modèle {item.charging}</Text>
                   )}
-                  {title === "Devis" && <Text>`###`</Text>}
+                  {title === "Devis" && <Text>###</Text>}
                   {title === "Étape" && (
                     <Text
                       className={`
@@ -100,17 +100,17 @@ const StyledTableContainer = styled.table`
       }
 
       &.second {
-        color: #e8b05c;
+        color: ${({ theme }) => theme.yellow};
         background: rgba(232, 176, 92, 0.1);
       }
 
       &.third {
-        color: #9e79ec;
+        color: ${({ theme }) => theme.purple};
         background: rgba(158, 121, 236, 0.1);
       }
 
       &.fourth {
-        color: #f074a1;
+        color: ${({ theme }) => theme.red};
         background: rgba(240, 116, 161, 0.1);
       }
     }

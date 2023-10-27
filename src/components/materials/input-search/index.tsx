@@ -15,7 +15,7 @@ export default function InputSearch({
   };
 
   return (
-    <StyledInputSearch>
+    <StyledInputSearch className="input-container">
       {!isFocus && <Icon width={18} height={18} Icon={Search} />}
       <input
         type="text"
@@ -29,7 +29,7 @@ export default function InputSearch({
 }
 
 const StyledInputSearch = styled.div`
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${({ theme }) => theme.gray_third};
   padding: 6px 12px;
   border-radius: 6px;
   background: ${({ theme }) => theme.white};

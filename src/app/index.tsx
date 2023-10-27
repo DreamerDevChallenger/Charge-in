@@ -20,9 +20,17 @@ export const appTheme = {
   tertiary: "#4BD2CA",
   quaternary: "#8BDFDA ",
   black: "#000",
+  black_third: "#282828",
   white: "#FFF",
   gray: "#AFB2B6",
   gray_second: "#8FA2A2",
+  gray_third: "#E5E5E5",
+  gray_fifth: "#F4F8F6",
+  document: "#6A6A6A",
+  emphasis: "#252C46",
+  yellow: "#e8b05c",
+  purple: "#9e79ec",
+  red: "#f074a1",
 };
 
 const combineTheme = {

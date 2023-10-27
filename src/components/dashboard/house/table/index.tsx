@@ -16,10 +16,14 @@ export default function DashboardHouseTable() {
   const [current, setCurrent] = useState<number>(1);
   const [entries, setEntries] = useState<number>(5);
   const [stateTable, setStateTable] = useState<PropUser[]>([]);
+  const [sort, setSort] = useState<"id" | "step" | "charging">("id");
 
   const indexOfLastPage = current * entries;
   const indexOfFirstPage = indexOfLastPage - entries;
-  const currentData = stateTable.slice(indexOfFirstPage, indexOfLastPage);
+  const currentData = stateTable
+    .slice()
+    .sort((a, b) => a[sort] - b[sort])
+    .slice(indexOfFirstPage, indexOfLastPage);
 
   const paginate = (pageNumber: number) => {
     return setCurrent(pageNumber);
@@ -32,9 +36,10 @@ export default function DashboardHouseTable() {
   return (
     <StyledDashboardHouseTable>
       <TableHeader
-        stateTable={stateTable}
         setStateTable={setStateTable}
         paginate={paginate}
+        sort={sort}
+        setSort={setSort}
       />
       <div className="table-wrapper">
         <TableContainer currentData={currentData} />

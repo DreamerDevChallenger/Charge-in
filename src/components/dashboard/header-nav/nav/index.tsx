@@ -5,20 +5,26 @@ import NavItem from "./nav-item";
 import { chivo } from "@/utils/font";
 import Text from "@/components/materials/text";
 import NavDropdown from "./nav-dropdown";
-import { Window } from "@mui/icons-material";
+import { Window, WindowOutlined } from "@mui/icons-material";
+import { usePathname } from "next/navigation";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+import { SvgIconTypeMap } from "@mui/material";
 
 export interface NavItemProp {
   children: React.ReactNode;
-  icon: any;
+  icon_off: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
+  icon_on: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
+
   path: string;
 }
 
 export default function DashboardNav() {
+  const url = "/dashboard";
   return (
     <StyledDashboardNav className={chivo.className}>
       <ul>
         <li className="nav-item">
-          <NavItem icon={Window} path="/dashboard">
+          <NavItem icon_off={WindowOutlined} icon_on={Window} path={url}>
             Accueil
           </NavItem>
         </li>
@@ -32,11 +38,19 @@ export default function DashboardNav() {
             {list.items.map((item, i) => (
               <li className="nav-item" key={i}>
                 {item.dropdown ? (
-                  <NavDropdown icon={item.icon_off} path={item.path}>
+                  <NavDropdown
+                    icon_off={item.icon_off}
+                    icon_on={item.icon_on}
+                    path={item.path}
+                  >
                     {item.title}
                   </NavDropdown>
                 ) : (
-                  <NavItem icon={item.icon_off} path={item.path}>
+                  <NavItem
+                    icon_off={item.icon_off}
+                    icon_on={item.icon_on}
+                    path={item.path}
+                  >
                     {item.title}
                   </NavItem>
                 )}
@@ -60,7 +74,7 @@ const StyledDashboardNav = styled.nav`
     gap: 12px;
 
     .nav-list-title {
-      color: #6a93ac;
+      color: ${({ theme }) => theme.text_secondary};
       font-weight: 400;
       text-transform: uppercase;
       font-size: 15px;

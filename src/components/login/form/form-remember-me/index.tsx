@@ -31,7 +31,7 @@ const StyledFormRemeberMe = styled.div`
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #252c46;
+    color: ${({ theme }) => theme.emphasis};
 
     .check-remember {
       position: relative;

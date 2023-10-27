@@ -6,7 +6,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "@/components/materials/icon";
 
-export default function NavDropdown({ children, icon, path }: NavItemProp) {
+export default function NavDropdown({
+  children,
+  icon_off,
+  icon_on,
+  path,
+}: NavItemProp) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pathname = usePathname();
@@ -23,7 +28,11 @@ export default function NavDropdown({ children, icon, path }: NavItemProp) {
       }`}
     >
       <div className="nav-link" onClick={() => setIsOpen(!isOpen)}>
-        <Icon Icon={icon} width={20} height={20} />
+        <Icon
+          Icon={pathname.includes(path) ? icon_on : icon_off}
+          width={20}
+          height={20}
+        />
         <Text>{children}</Text>
         <div className={`toggle-dropdown`}>
           <div className="lign"></div>
@@ -72,7 +81,7 @@ const StyledNavDropdown = styled.div`
     flex-direction: column;
     padding: 12px 16px;
     border-radius: 0 0 8px 8px;
-    color: #6a93ac;
+    color: ${({ theme }) => theme.text_secondary};
     transition: 0.3s;
     transform-origin: top;
     .active {

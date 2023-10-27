@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Charge-in | House Profil",
+};
+
 export interface PropProfil {
   profilData:
     | {

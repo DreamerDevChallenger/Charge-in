@@ -1,3 +1,5 @@
+"use client";
+
 import { PropProfil } from "@/app/dashboard/house/in-progress/profil/[id]/layout";
 import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
@@ -79,7 +81,7 @@ const StyledDashboardProfilLink = styled.div`
     }
 
     .link-text {
-      color: #8fa2a2;
+      color: ${({ theme }) => theme.gray_second};
     }
   }
 `;

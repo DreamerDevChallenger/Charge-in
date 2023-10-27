@@ -37,7 +37,7 @@ const StyledNotification = styled.div`
   }
 
   .icon {
-    color: #afb2b6;
+    color: ${({ theme }) => theme.gray};
   }
 
   &.hover {

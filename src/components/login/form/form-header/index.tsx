@@ -34,7 +34,7 @@ const StyledFormHeader = styled.div`
   }
   span {
     text-align: center;
-    color: #6a6a6a;
+    color: ${({ theme }) => theme.document};
   }
 
   @media (min-width: 426px) {

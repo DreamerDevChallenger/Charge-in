@@ -7,6 +7,7 @@ import toggleNavbarReducer from "@/redux/reducers/toggle-navbar";
 import userReducer from "@/redux/reducers/users";
 import overlayReducer from "@/redux/reducers/overlay";
 import notificationReducer from "@/redux/reducers/notfication";
+import commentReducer from "@/redux/reducers/comment";
 
 const createNoopStorage = () => {
   return {
@@ -32,12 +33,13 @@ const reducers = combineReducers({
   user: userReducer,
   overlay: overlayReducer,
   notification: notificationReducer,
+  comment: commentReducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["overlay", "user", "currentUser"],
+  blacklist: ["overlay", "user", "toggleNavbar"],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);

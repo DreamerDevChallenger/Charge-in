@@ -64,7 +64,7 @@ const StyledProfilPopIn = styled.div`
       }
 
       .mail {
-        color: #8fa2a2;
+        color: ${({ theme }) => theme.gray_second};
         font-size: 12px;
       }
     }
