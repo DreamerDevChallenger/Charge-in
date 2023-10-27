@@ -22,7 +22,7 @@ export default function DashboardProfilCommentary() {
             placeholder="Ajouter un commentaire..."
           />
 
-          <button className="button-sent">
+          <button className="button-sent" aria-label={`button sent comment`}>
             <Icon Icon={ArrowDownward} height={20} width={20} />
           </button>
         </div>

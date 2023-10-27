@@ -32,7 +32,10 @@ export default function TableContainer({
               {dataTable.map((title, index) => (
                 <td key={index} className={`table-item`}>
                   {title === "Nom" && (
-                    <Link href={`${pathname}/profil/${item.id}`}>
+                    <Link
+                      aria-label={`Link to ${item.first_name} ${item.last_name} profil`}
+                      href={`${pathname}/profil/${item.id}`}
+                    >
                       <Text>
                         {item.first_name.slice(0, 1)}.{item.last_name}
                       </Text>
@@ -61,7 +64,10 @@ export default function TableContainer({
                   )}
                   {title === "Actions" && (
                     <div className="action">
-                      <Link href={`${pathname}/profil/${item.id}`}>
+                      <Link
+                        href={`${pathname}/profil/${item.id}`}
+                        aria-label={`Link to ${item.first_name} ${item.last_name} profil`}
+                      >
                         <Icon Icon={Edit} width={16} height={16} />
                       </Link>
                       <Icon Icon={Delete} width={16} height={16} />

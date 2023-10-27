@@ -13,7 +13,7 @@ export default function ButtonDropdown() {
     <StyledButtonDropdown className={`${open ? "open " : ""} dropdown`}>
       <div className={`current`} onClick={() => setOpen(!open)}>
         <Text>{currentValue}</Text>
-        <button>
+        <button aria-label={`button toggle dropdown statistic`}>
           <Icon Icon={ArrowBackIosNew} width={16} height={16} />
         </button>
       </div>

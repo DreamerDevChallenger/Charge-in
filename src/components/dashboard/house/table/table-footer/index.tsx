@@ -47,6 +47,7 @@ export default function TableFooter({
         Lignes par page : <Text className="entries">{entries} </Text>
         <button
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Button entries"
           className={`btn-entries ${isOpen ? "open" : "close"}`}
         >
           <Icon Icon={ArrowBackIos} width={16} height={16} />
@@ -72,7 +73,8 @@ export default function TableFooter({
       </div>
       <div className="btn-container">
         <button
-          className={`${current !== 1 ? "" : "disable "}btn next`}
+          className={`${current !== 1 ? "" : "disable "}btn previous`}
+          aria-label="Button previous"
           onClick={current !== 1 ? () => paginate(current - 1) : () => {}}
         >
           <Icon Icon={ArrowBackIos} width={16} height={16} />
@@ -80,6 +82,7 @@ export default function TableFooter({
 
         <button
           className={`${current < dataRange ? "" : "disable "}btn next`}
+          aria-label="Button next"
           onClick={current < dataRange ? () => paginate(current + 1) : () => {}}
         >
           <Icon Icon={ArrowForwardIos} width={16} height={16} />

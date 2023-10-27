@@ -11,6 +11,7 @@ export default function FormRememberMe() {
           type="checkbox"
           name="checkbox"
           id="chekckbox"
+          aria-label={`button remember me`}
         />
         <span>Se souvenir de moi</span>
       </div>
