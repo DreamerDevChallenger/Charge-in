@@ -60,7 +60,6 @@ export default function App({ children }: { children: React.ReactNode }) {
 
 const StyledApp = styled.div`
   background-color: ${({ theme }) => theme.background_primary};
-  height: 100vh;
   display: flex;
   position: relative;
 
@@ -80,7 +79,7 @@ const StyledApp = styled.div`
   &.dashboard {
     flex-direction: row;
     height: 100vh;
-
+    overflow: hidden;
     .main-dashboard {
       padding: 30px 20px 30px;
       gap: 30px;
