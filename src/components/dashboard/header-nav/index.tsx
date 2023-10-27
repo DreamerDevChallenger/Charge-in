@@ -30,6 +30,7 @@ const StyledDashboardHeaderNav = styled.header`
   height: 100%;
   transition: transform 0.3s ease-out;
   z-index: 5;
+  min-width: 240px;
 
   .nav-container {
     display: flex;
@@ -53,7 +54,7 @@ const StyledDashboardHeaderNav = styled.header`
   }
 
   @media (min-width: 1024px) {
-    position: relative;
+    position: sticky;
     margin-right: 0px;
     overflow: hidden;
     width: auto;
