@@ -68,7 +68,6 @@ const StyledApp = styled.div`
     flex-direction: column;
     gap: 0px;
     min-height: 100vh;
-    height: auto;
     main {
       padding: 20px;
       section {
@@ -80,6 +79,8 @@ const StyledApp = styled.div`
 
   &.dashboard {
     flex-direction: row;
+    height: 100vh;
+
     .main-dashboard {
       padding: 30px 20px 30px;
       gap: 30px;
