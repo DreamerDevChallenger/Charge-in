@@ -81,7 +81,7 @@ const StyledApp = styled.div`
     height: 100vh;
     overflow: hidden;
     .main-dashboard {
-      padding: 30px 20px 30px;
+      padding: 0;
       gap: 30px;
       overflow: auto;
     }

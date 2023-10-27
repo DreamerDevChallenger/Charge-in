@@ -11,6 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <>
+      <Overlay />
       <StyledDahboard className="main-dashboard">
         <HeaderDashboard />
         {children}
