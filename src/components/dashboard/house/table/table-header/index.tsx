@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { useAppSelector } from "@/redux/hooks";
 import { selectUser } from "@/redux/selectors";
 import InputSearch from "@/components/materials/input-search";
-import { PropUser } from "@/redux/reducers/users";
 import TableSort from "./sort";
 
 export default function TableHeader({
@@ -13,7 +12,7 @@ export default function TableHeader({
   sort,
 }: {
   paginate: (e: number) => void;
-  setStateTable: (e: Array<object>) => void;
+  setStateTable: (e: Array<any>) => void;
   setSort: (e: "id" | "charging" | "step") => void;
   sort: "id" | "charging" | "step";
 }) {
