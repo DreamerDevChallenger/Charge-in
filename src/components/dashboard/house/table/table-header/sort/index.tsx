@@ -14,6 +14,11 @@ export default function TableSort({
 }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const handleClick = (value: "id" | "step" | "charging" | string) => {
+    setSort(value);
+    setIsOpen(false);
+  };
+
   return (
     <StyledTableSort>
       <div className="current" onClick={() => setIsOpen(!isOpen)}>
@@ -40,9 +45,7 @@ export default function TableSort({
               <div
                 className="list-item"
                 key={index}
-                onClick={() => {
-                  setSort(item.value), setIsOpen(false);
-                }}
+                onClick={() => handleClick(item.value)}
               >
                 <Text>{item.name}</Text>
               </div>

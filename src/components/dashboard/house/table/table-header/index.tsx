@@ -13,7 +13,7 @@ export default function TableHeader({
   sort,
 }: {
   paginate: (e: number) => void;
-  setStateTable: (e: Array<any>) => void;
+  setStateTable: (e: Array<object>) => void;
   setSort: (e: "id" | "charging" | "step") => void;
   sort: "id" | "charging" | "step";
 }) {

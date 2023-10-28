@@ -9,9 +9,7 @@ export default function Text({
   className?: string;
 }) {
   return (
-    <StyledText
-      className={`${chivo.className} ${className ? `${className} ` : ""}text`}
-    >
+    <StyledText className={`${className ? `${className} ` : ""}text`}>
       {children}
     </StyledText>
   );

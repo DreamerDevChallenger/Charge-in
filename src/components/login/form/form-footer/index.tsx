@@ -11,8 +11,9 @@ export default function FormFooter() {
         className="button-login"
         type="submit"
         onClick={() => router.push("/dashboard")}
+        /*     onSubmit={() => router.push("/dashboard")}
         form="login-form"
-        value="Submit"
+        value="Submit" */
       >
         SE CONNECTER
       </button>

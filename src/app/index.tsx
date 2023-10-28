@@ -62,7 +62,6 @@ const StyledApp = styled.div`
   background-color: ${({ theme }) => theme.background_primary};
   display: flex;
   position: relative;
-  min-height: 100vh;
 
   &.app {
     flex-direction: column;
@@ -78,12 +77,10 @@ const StyledApp = styled.div`
 
   &.dashboard {
     flex-direction: row;
-    overflow: auto;
-    height: 100vh;
     .main-dashboard {
       padding: 30px 20px 30px;
       gap: 30px;
-      overflow-x: auto;
+      overflow: auto;
     }
   }
 

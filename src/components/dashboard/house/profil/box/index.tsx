@@ -16,7 +16,12 @@ export default function DashboardProfilBox({
       className={`${className ? `${className} ` : ""}card-box`}
     >
       <div className="box-container">
-        <Image src={img} alt="" width={150} height={150} />
+        <Image
+          src={img}
+          alt="image charging or installer"
+          width={150}
+          height={150}
+        />
       </div>
       <div className="box-container">
         <ul>

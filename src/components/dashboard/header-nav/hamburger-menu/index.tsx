@@ -57,4 +57,8 @@ const StyledHamburgerMenu = styled.button`
     top: 0;
     transition: 0.3s ease-in-out;
   }
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
 `;

@@ -1,3 +1,5 @@
+// Status for call API
+
 import { PayloadAction } from "@reduxjs/toolkit";
 
 export const PENDING = "pending";

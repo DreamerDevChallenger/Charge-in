@@ -32,7 +32,9 @@ export default function FormControl({
               className={chivo.className}
               placeholder={placeholder}
               autoComplete="current-password"
-              pattern={"^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$"}
+              pattern={
+                "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*W)(?!.* ).{8,16}$"
+              }
               required
             />
             <div className="icon-container" onClick={() => setShow(!show)}>
@@ -46,9 +48,12 @@ export default function FormControl({
             className={chivo.className}
             placeholder={placeholder}
             autoComplete="username"
+            pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/"
+            required
           />
         )}
       </div>
+      {/* <div className="error-message">error</div> */}
     </StyledFormControl>
   );
 }

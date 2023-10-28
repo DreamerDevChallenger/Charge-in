@@ -56,7 +56,7 @@ const StyledDashboardHeaderNav = styled.header`
   @media (min-width: 1024px) {
     position: sticky;
     margin-right: 0px;
-    overflow: hidden;
+    height: 100vh;
     width: auto;
 
     &.close {
