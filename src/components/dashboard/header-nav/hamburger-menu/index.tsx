@@ -31,6 +31,7 @@ const StyledHamburgerMenu = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 6;
 
   &.open {
     .lign {

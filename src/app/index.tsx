@@ -65,7 +65,8 @@ const StyledApp = styled.div`
 
   &.app {
     flex-direction: column;
-    gap: 0px;
+    min-height: 100vh;
+
     main {
       padding: 20px;
       section {
