@@ -45,7 +45,7 @@ export default function TableHeader({
         {data.length} {data.length <= 1 ? "résultat" : "résultats"}
       </Text>
       <InputSearch onSearch={onSearch} />
-      <TableSort setSort={setSort} sort={sort} />
+      <TableSort setSort={setSort} sort={sort} paginate={paginate} />
     </StyledTableHeader>
   );
 }

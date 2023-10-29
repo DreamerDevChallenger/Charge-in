@@ -3,13 +3,13 @@
 import styled from "styled-components";
 import { PropProfil } from "@/app/dashboard/house/in-progress/profil/[id]/layout";
 import PageTitle from "@/components/materials/page-title";
-import { Person, PersonOutline } from "@mui/icons-material";
+import { PersonOutlined } from "@mui/icons-material";
 
 export default function DashboardProfilHeader({ profilData }: PropProfil) {
   return (
     <StyledDashboardProfilHeader>
-      <PageTitle icon={PersonOutline}>
-        {`${profilData?.first_name} ${profilData?.last_name}`}
+      <PageTitle icon={PersonOutlined}>
+        {/* Profil: */} {`${profilData?.first_name} ${profilData?.last_name}`}
       </PageTitle>
     </StyledDashboardProfilHeader>
   );

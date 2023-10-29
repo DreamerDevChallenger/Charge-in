@@ -35,11 +35,8 @@ export const appTheme = {
 
 const combineTheme = {
   ...appTheme,
-  primary_gradient: {
-    first: appTheme.background_secondary,
-    second: appTheme.background_tertiary,
-  },
-  secondary_gradient: { first: appTheme.quaternary, second: appTheme.primary },
+  primary_gradient: `linear-gradient(158deg, ${appTheme.background_secondary} -0.8%, ${appTheme.background_tertiary} 98.23%) `,
+  secondary_gradient: `linear-gradient(128deg, ${appTheme.quaternary}, ${appTheme.primary})`,
 };
 
 export default function App({ children }: { children: React.ReactNode }) {

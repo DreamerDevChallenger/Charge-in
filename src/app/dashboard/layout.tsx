@@ -3,6 +3,7 @@
 import HeaderDashboard from "@/components/dashboard/header";
 import Overlay from "@/components/dashboard/overlay";
 import styled from "styled-components";
+import { appTheme } from "..";
 
 export default function RootLayout({
   children,
@@ -14,6 +15,12 @@ export default function RootLayout({
       <StyledDahboard className="main-dashboard">
         <HeaderDashboard />
         {children}
+        <svg width={0} height={0}>
+          <linearGradient id="linearColors" x1={0} y1={0} x2={1} y2={1}>
+            <stop offset={0} stopColor={appTheme.quaternary} />
+            <stop offset={1} stopColor={appTheme.primary} />
+          </linearGradient>
+        </svg>
       </StyledDahboard>
       <Overlay />
     </>

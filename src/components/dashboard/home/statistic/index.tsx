@@ -1,11 +1,12 @@
 "use client";
 
-import SectionTitle from "@/components/materials/section-title";
 import styled from "styled-components";
 import { dataStatistic } from "./data";
 
+import SectionTitle from "@/components/materials/section-title";
 import Icon from "@/components/materials/icon";
 import Text from "@/components/materials/text";
+
 import ButtonDropdown from "./button-dropdown";
 import DashboardStatisticB2BB2C from "./b2b-b2c";
 import DashboardStatisticDigit from "./digit";
@@ -21,7 +22,7 @@ export default function DashboardStatistic() {
         {dataStatistic.map((item, index) => (
           <div key={index} className="card">
             <div className="card-header">
-              <Icon Icon={item.icon} width={41} height={36} />
+              <Icon Icon={item.icon} width={41} height={36} gradient />
               <Text className="description">{item.text}</Text>
             </div>
             {item.subscription && (
@@ -74,10 +75,6 @@ const StyledDashboardStatistic = styled.section`
         display: flex;
         flex-direction: column;
         gap: 12px;
-
-        .icon {
-          color: ${({ theme }) => theme.primary};
-        }
 
         .description {
           color: ${({ theme }) => theme.gray_second};

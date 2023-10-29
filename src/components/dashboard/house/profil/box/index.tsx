@@ -44,6 +44,8 @@ const StyledDashboardProfilBox = styled.div`
   border-radius: 16px;
   border: 1px solid #dce6e5;
   display: flex;
+  justify-content: space-between;
+  align-content: center;
   flex-wrap: wrap;
   gap: 60px;
 
@@ -51,17 +53,18 @@ const StyledDashboardProfilBox = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5px;
+    min-width: 150px;
   }
 
   .box-container {
     display: flex;
+    flex: 1;
     align-items: center;
   }
 
   .box-price {
     color: ${({ theme }) => theme.secondary};
     font-size: 30px;
-
     font-weight: 600;
   }
 

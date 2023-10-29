@@ -29,7 +29,7 @@ const StyledDashboardHeaderNav = styled.header`
   background: ${({ theme }) => theme.background_secondary};
   height: 100%;
   transition: transform 0.3s ease-out;
-  z-index: 5;
+  z-index: 6;
   min-width: 240px;
 
   .nav-container {
@@ -57,7 +57,6 @@ const StyledDashboardHeaderNav = styled.header`
     position: sticky;
     margin-right: 0px;
     height: 100vh;
-    width: auto;
 
     &.close {
       transform: translateX(0%);

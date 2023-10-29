@@ -120,6 +120,7 @@ const StyledTableContainer = styled.table`
         background: rgba(240, 116, 161, 0.1);
       }
     }
+
     .action {
       display: flex;
       gap: 4px;

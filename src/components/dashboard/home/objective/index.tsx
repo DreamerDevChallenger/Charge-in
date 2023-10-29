@@ -36,10 +36,6 @@ const StyledDashboardObjectives = styled.section`
     flex-wrap: wrap;
   }
 
-  background: linear-gradient(
-    158deg,
-    ${({ theme }) =>
-      `${theme.primary_gradient.first} 0%, ${theme.primary_gradient.second} 98.23%`}
-  );
+  background: ${({ theme }) => theme.primary_gradient};
   box-shadow: 0px 4px 16px 0px rgba(164, 188, 211, 0.6);
 `;

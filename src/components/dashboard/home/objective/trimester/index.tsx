@@ -41,12 +41,9 @@ const StyledTrimester = styled.div`
     border-radius: 8px;
 
     &.current {
-      background: linear-gradient(
-        123deg,
-        ${({ theme }) =>
-          `${theme.secondary_gradient.first}, ${theme.secondary_gradient.second}`}
-      );
+      background: ${({ theme }) => theme.secondary_gradient};
     }
+
     span {
       white-space: nowrap;
     }

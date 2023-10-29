@@ -1,13 +1,14 @@
 import ButtonProfil from "@/components/materials/button-profil";
 import styled from "styled-components";
-import DashboardProfilBox from "../box";
 import installer from "@/assets/installer.png";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { selectOverlay } from "@/redux/selectors";
 import { toggleOverlay } from "@/redux/reducers/overlay";
 import { useState } from "react";
+
+import DashboardProfilBox from "../box";
 import DashboardProfilPopIn from "../pop-in";
-import { dataBoxCharging, dataBoxInstaller } from "../box/data";
+import { dataBoxInstaller } from "../box/data";
 
 export default function DashboardProfilInstaller() {
   const [popIn, setPopIn] = useState(false);

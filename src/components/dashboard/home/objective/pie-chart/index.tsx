@@ -39,7 +39,7 @@ export default function DashboardPieChart() {
                 <RadialBar
                   dataKey="score"
                   background={{ fill: "#1B2655" }}
-                  className="radial"
+                  fill="url(#linearColors)"
                 />
               </RadialBarChart>
             </ResponsiveContainer>
@@ -94,9 +94,5 @@ const StyledPieChart = styled.div`
         font-size: 20px;
       }
     }
-  }
-
-  .radial {
-    fill: ${({ theme }) => theme.primary};
   }
 `;

@@ -82,11 +82,7 @@ const StyledButtonDropdown = styled.div`
     color: ${({ theme }) => theme.white};
     border-radius: 8px;
     padding: 10px 12px;
-    background: linear-gradient(
-      123deg,
-      ${({ theme }) =>
-        `${theme.secondary_gradient.first}, ${theme.secondary_gradient.second}`}
-    );
+    background: ${({ theme }) => theme.secondary_gradient};
     display: flex;
     align-items: center;
     gap: 36px;

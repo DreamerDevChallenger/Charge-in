@@ -8,13 +8,16 @@ import { dataSort } from "./data";
 export default function TableSort({
   setSort,
   sort,
+  paginate,
 }: {
   setSort: (e: "id" | "step" | "charging" | any) => void;
   sort: "id" | "step" | "charging";
+  paginate: (e: number) => void;
 }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleClick = (value: "id" | "step" | "charging" | string) => {
+    paginate(1);
     setSort(value);
     setIsOpen(false);
   };
