@@ -20,11 +20,7 @@ const StyledButton = styled.button`
   border-radius: 8px;
   margin-left: auto;
   color: ${({ theme }) => theme.white};
-  background: linear-gradient(
-    123deg,
-    ${({ theme }) =>
-      `${theme.secondary_gradient.first}, ${theme.secondary_gradient.second}`}
-  );
+  background: ${({ theme }) => theme.secondary_gradient};
 
   .text {
     line-height: 24.6px;

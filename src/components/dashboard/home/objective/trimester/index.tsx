@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { dataObjective } from "../data";
 
 export default function Trimester() {
-  const [current, setCurrent] = useState<number>(0);
+  const [current, setCurrent] = useState<number>(3);
 
   return (
     <StyledTrimester>
@@ -13,13 +13,9 @@ export default function Trimester() {
           className={`trimester-item ${current === index ? "current" : ""}`}
           onClick={() => setCurrent(index)}
         >
-          <span>{item} trimestre</span>
+          <span>{item.length <= 4 ? `${item} trimestre` : item} </span>
         </div>
       ))}
-
-      <div className={`trimester-item`}>
-        <span>année 2023</span>
-      </div>
     </StyledTrimester>
   );
 }

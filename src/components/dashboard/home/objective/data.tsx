@@ -1,5 +1,5 @@
 export const dataObjective = {
-  trimester: ["1er", "2ème", "3ème"],
+  trimester: ["1er", "2ème", "3ème", "année 2023"],
   pie_chart: [
     {
       name: "Partenaires",

@@ -6,27 +6,16 @@ interface PictureProp {
   Icon: any;
   width: number;
   height: number;
-  stroke?: "primary" | string;
-  fill?: "primary";
+
   gradient?: boolean;
 }
 
-export default function Icon({
-  Icon,
-  width,
-  height,
-  stroke,
-  gradient,
-  fill,
-}: PictureProp) {
+export default function Icon({ Icon, width, height, gradient }: PictureProp) {
   return (
     <StyledIcon
-      fill={fill}
-      stroke={stroke}
       width={width}
       height={height}
-      className="icon"
-      gradient={gradient}
+      className={`${gradient ? "gradient " : ""} icon`}
     >
       <Icon />
     </StyledIcon>
@@ -36,9 +25,6 @@ export default function Icon({
 const StyledIcon = styled.div<{
   width: number;
   height: number;
-  stroke?: "primary" | string;
-  fill?: "primary";
-  gradient?: boolean;
 }>`
   display: flex;
   width: ${({ width }) => width}px;
@@ -49,6 +35,11 @@ const StyledIcon = styled.div<{
   svg {
     width: 100%;
     height: auto;
-    ${({ gradient }) => gradient && "fill: url(#linearColors)"}
+  }
+
+  &.gradient {
+    svg {
+      fill: url(#linearColors);
+    }
   }
 `;
