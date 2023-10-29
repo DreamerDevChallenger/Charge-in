@@ -48,7 +48,7 @@ export default function DashboardProfilPopIn({
         <div className="pop-in-content">
           <div className="pop-container">
             <h2>
-              <Icon Icon={SyncAlt} width={30} height={30} stroke="primary" />
+              <Icon Icon={SyncAlt} width={30} height={30} />
               <span>Changer {title}</span>
             </h2>
           </div>
