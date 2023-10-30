@@ -23,7 +23,8 @@ const StyledDashboardHouseHeader = styled.section`
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
   max-width: 1200px;
 
   .button-container {
@@ -31,6 +32,12 @@ const StyledDashboardHouseHeader = styled.section`
     justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 24px;
+  }
+
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;

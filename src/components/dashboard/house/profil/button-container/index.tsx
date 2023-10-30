@@ -6,7 +6,7 @@ import styled from "styled-components";
 export default function ButtonContainer() {
   return (
     <StyledButtonContainer>
-      <div className="left">
+      <div className="btn-container left">
         <button className="step">
           <Text>Étape</Text>
           <div className="icon-container">
@@ -14,7 +14,7 @@ export default function ButtonContainer() {
           </div>
         </button>
       </div>
-      <div className="right">
+      <div className="btn-container right">
         <button className="statut">
           <Text>Statut</Text>
         </button>
@@ -32,17 +32,18 @@ export default function ButtonContainer() {
 const StyledButtonContainer = styled.section`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 16px;
 
-  .left {
-    flex: 1;
-    margin: auto;
+  .btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .right {
-    display: flex;
-
+    flex-direction: column;
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -51,6 +52,7 @@ const StyledButtonContainer = styled.section`
     font-size: 18px;
     border-radius: 8px;
     display: flex;
+    width: fit-content;
 
     .text {
       padding: 10px 22px;
@@ -79,6 +81,13 @@ const StyledButtonContainer = styled.section`
     &.step,
     &.mail {
       color: ${({ theme }) => theme.white};
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    .right {
+      flex-direction: row;
     }
   }
 `;

@@ -2,8 +2,8 @@
 
 import HeaderDashboard from "@/components/dashboard/header";
 import Overlay from "@/components/dashboard/overlay";
+import SvgGradient from "@/components/materials/svg-gradient";
 import styled from "styled-components";
-import { appTheme } from "..";
 
 export default function RootLayout({
   children,
@@ -15,12 +15,7 @@ export default function RootLayout({
       <StyledDahboard className="main-dashboard">
         <HeaderDashboard />
         {children}
-        <svg width={0} height={0}>
-          <linearGradient id="linearColors" x1={0} y1={0} x2={1} y2={1}>
-            <stop offset={0} stopColor={appTheme.quaternary} />
-            <stop offset={1} stopColor={appTheme.primary} />
-          </linearGradient>
-        </svg>
+        <SvgGradient />
       </StyledDahboard>
       <Overlay />
     </>
@@ -30,7 +25,7 @@ export default function RootLayout({
 const StyledDahboard = styled.main`
   .card {
     background: ${({ theme }) => theme.white};
-    padding: 40px 30px;
+    padding: 40px 20px;
     border-radius: 16px;
     box-shadow: 0px 4px 16px 0px rgba(176, 189, 189, 0.16);
     display: flex;
@@ -38,11 +33,11 @@ const StyledDahboard = styled.main`
     gap: 24px;
 
     h2 {
-      text-align: left;
+      justify-content: center;
+      text-align: center;
       font-size: 25px;
     }
 
-    font-size: 16px;
     .value {
       opacity: 0.5;
     }
@@ -52,6 +47,12 @@ const StyledDahboard = styled.main`
       flex-direction: column;
       gap: 10px;
     }
+
+    .card-grid {
+      display: grid;
+      grid-auto-rows: 1fr;
+    }
+
     .card-list-item {
       display: flex;
       align-items: center;
@@ -60,8 +61,8 @@ const StyledDahboard = styled.main`
         display: inline-block;
         content: "";
         background: ${({ theme }) => theme.primary};
-        width: 5px;
-        height: 5px;
+        min-width: 5px;
+        min-height: 5px;
         margin-right: 10px;
         border-radius: 100%;
       }
@@ -70,6 +71,17 @@ const StyledDahboard = styled.main`
     .card-wrapper {
       display: flex;
       flex-direction: column;
+
+      .card-row {
+        &.card-space-between {
+          justify-content: space-between;
+        }
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
       .card-container {
         display: flex;
         flex-direction: column;
@@ -80,16 +92,21 @@ const StyledDahboard = styled.main`
         &:nth-last-child(-n + 1) {
           border-bottom: 1px solid transparent;
         }
+      }
+    }
+  }
 
-        .card-row {
-          &.card-space-between {
-            justify-content: space-between;
-          }
-          display: flex;
-          flex-direction: row;
-          gap: 16px;
-          flex-wrap: wrap;
-        }
+  @media (min-width: 425px) {
+    .card {
+      padding: 40px 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .card {
+      h2 {
+        text-align: start;
+        justify-content: start;
       }
     }
   }

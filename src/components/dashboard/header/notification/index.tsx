@@ -34,10 +34,10 @@ export default function Notification() {
 const StyledNotification = styled.div`
   .notif-container {
     position: relative;
-  }
-
-  .icon {
-    color: ${({ theme }) => theme.gray};
+    .icon {
+      color: ${({ theme }) => theme.gray};
+    }
+    cursor: pointer;
   }
 
   &.hover {

@@ -32,9 +32,6 @@ export default function FormControl({
               className={chivo.className}
               placeholder={placeholder}
               autoComplete="current-password"
-              pattern={
-                "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*W)(?!.* ).{8,16}$"
-              }
               required
             />
             <div className="icon-container" onClick={() => setShow(!show)}>
@@ -48,7 +45,6 @@ export default function FormControl({
             className={chivo.className}
             placeholder={placeholder}
             autoComplete="username"
-            pattern="/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/"
             required
           />
         )}
@@ -79,6 +75,7 @@ const StyledFormControl = styled.div`
       height: 24px;
       font-size: 16px;
     }
+
     .icon-container {
       position: absolute;
       top: 5px;

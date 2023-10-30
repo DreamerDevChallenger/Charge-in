@@ -8,7 +8,7 @@ export default function DashboardProfilDocument() {
     <StyledDocument>
       <div className="card">
         <h2>Documents ajoutés</h2>
-        <div className="card-row title">
+        <div className="card-grid title-container">
           {dataDocument.map((_, index) => (
             <div key={index} className="card-item">
               <Text className="label">Titre du document</Text>
@@ -16,7 +16,7 @@ export default function DashboardProfilDocument() {
             </div>
           ))}
         </div>
-        <div className="card-row">
+        <div className="other-document">
           <Text className="label">Autre documents</Text>
           <Text className="document">nomdufichier.png</Text>
           <Text className="document">nomdufichier.png</Text>
@@ -37,18 +37,38 @@ const StyledDocument = styled.section`
     color: ${({ theme }) => theme.primary};
   }
 
-  .card-row {
+  .other-document {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    &.title {
-      gap: 18px 64px;
-      border-bottom: 1px solid ${({ theme }) => theme.background_primary};
-      padding-bottom: 24px;
-    }
     gap: 16px;
+  }
+
+  .title-container {
+    grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+    gap: 10px;
+    align-items: center;
+    gap: 18px 48px;
+    border-bottom: 1px solid ${({ theme }) => theme.background_primary};
+    padding-bottom: 24px;
+
+    .card-item {
+      align-items: center;
+    }
+
+    span {
+      width: fit-content;
+    }
+
     .label {
       margin-right: 8px;
+    }
+  }
+
+  @media (min-width: 455px) {
+    .title-container {
+      .card-item {
+        align-items: start;
+      }
     }
   }
 `;

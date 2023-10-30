@@ -23,16 +23,14 @@ export default function DashboardProfilAccessories() {
     <StyledDashboardProfilAccessories>
       <div className="card">
         <h2>Accessoires</h2>
-        <div className="card-wrapper">
-          <div className="card-container">
-            <ul className="card-list">
-              {dataAccessory.map((item, index) => (
-                <li key={index} className="card-list-item">
-                  <Text className="label">{"Nom de l’accessoire"}</Text>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="card-container">
+          <ul className="card-list card-grid">
+            {dataAccessory.map((item, index) => (
+              <li key={index} className="card-list-item">
+                <Text className="label">{"Nom de l’accessoire"}</Text>
+              </li>
+            ))}
+          </ul>
         </div>
         {isOpen && popIn && (
           <DashboardProfilPopIn
@@ -53,9 +51,19 @@ export default function DashboardProfilAccessories() {
 
 const StyledDashboardProfilAccessories = styled.section`
   .card-list {
-    display: flex;
-    flex-wrap: wrap;
     gap: 36px;
     list-style: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    .card-list-item {
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 535.5px) {
+    .card-list {
+      .card-list-item {
+        justify-content: start;
+      }
+    }
   }
 `;

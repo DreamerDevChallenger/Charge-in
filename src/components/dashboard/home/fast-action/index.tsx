@@ -36,6 +36,7 @@ const StyledFastAction = styled.section`
     width: 100%;
     align-items: center;
     justify-content: space-around;
+
     .action-item {
       padding: 10px 16px;
       border-radius: 8px;

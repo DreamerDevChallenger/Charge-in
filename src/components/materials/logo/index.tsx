@@ -1,5 +1,4 @@
 import logo from "@/assets/logo.svg";
-
 import Image from "next/image";
 import styled from "styled-components";
 

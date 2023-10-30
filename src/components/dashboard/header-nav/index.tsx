@@ -6,7 +6,7 @@ import { useAppSelector } from "@/redux/hooks";
 import { selectToggleNavbar } from "@/redux/selectors";
 
 export default function DashboardHeaderNav() {
-  const { isOpen } = useAppSelector(selectToggleNavbar);
+  const { isOpen } = useAppSelector<{ isOpen: boolean }>(selectToggleNavbar);
 
   return (
     <StyledDashboardHeaderNav className={`${isOpen ? "open" : "close"}`}>
@@ -30,7 +30,6 @@ const StyledDashboardHeaderNav = styled.header`
   height: 100%;
   transition: transform 0.3s ease-out;
   z-index: 6;
-  min-width: 240px;
 
   .nav-container {
     display: flex;

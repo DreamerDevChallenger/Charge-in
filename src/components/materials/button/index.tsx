@@ -1,16 +1,25 @@
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
 import styled from "styled-components";
+import Icon from "../icon";
 
-export default function Button({
+export default function ButtonPopIn({
   children,
   onClick,
+  icon,
 }: {
   children: React.ReactNode;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
 }) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+  return (
+    <StyledButtonPopIn onClick={onClick}>
+      <Icon Icon={icon} width={20} height={20} /> {children}
+    </StyledButtonPopIn>
+  );
 }
 
-const StyledButton = styled.button`
+const StyledButtonPopIn = styled.button`
   display: flex;
   gap: 10px;
   align-items: center;

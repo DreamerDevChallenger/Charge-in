@@ -7,9 +7,9 @@ import {
 } from "@/components/materials/profil";
 import Text from "@/components/materials/text";
 import Link from "next/link";
-import Button from "@/components/materials/button";
 import { useRouter } from "next/navigation";
-import { Login } from "@mui/icons-material";
+import { Logout } from "@mui/icons-material";
+import ButtonPopIn from "@/components/materials/button";
 
 export default function ProfilPopIn() {
   const router = useRouter();
@@ -35,10 +35,9 @@ export default function ProfilPopIn() {
         ))}
       </div>
       <div className="pop-in-footer">
-        <Button onClick={() => router.push("/login")}>
-          <Login />
+        <ButtonPopIn onClick={() => router.push("/login")} icon={Logout}>
           <Text>Déconnexion</Text>
-        </Button>
+        </ButtonPopIn>
       </div>
     </StyledProfilPopIn>
   );

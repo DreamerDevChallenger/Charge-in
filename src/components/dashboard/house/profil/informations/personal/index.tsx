@@ -14,15 +14,15 @@ export default function PersonalInformation() {
         </div>
         <div className="card-item">
           <Text className="label">Nom</Text>
-          <Text className="value">Prénom</Text>
+          <Text className="value">Nom</Text>
         </div>
         <div className="card-item">
           <Text className="label">Code Postal</Text>
-          <Text className="value">Prénom</Text>
+          <Text className="value">Code Posta</Text>
         </div>
         <div className="card-item">
           <Text className="label">Adresse</Text>
-          <Text className="value">Prénom</Text>
+          <Text className="value">Adresse</Text>
         </div>
         <div className="card-row">
           <Icon Icon={Mail} width={16} height={16} />
@@ -46,10 +46,10 @@ export default function PersonalInformation() {
 const StyledPersonalInformation = styled.div`
   .card-wrapper {
     gap: 18px;
+
     .card-row {
-      display: flex;
-      flex-wrap: wrap;
       gap: 8px 16px;
+
       .icon {
         color: ${({ theme }) => theme.primary};
       }

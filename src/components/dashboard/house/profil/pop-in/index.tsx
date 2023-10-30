@@ -78,7 +78,6 @@ export default function DashboardProfilPopIn({
                   <h3 className="other">
                     Autres {name?.toLowerCase()}s proposées
                   </h3>
-
                   <DashboardProfilBox
                     img={img ? img : chargin}
                     data={dataBox ? dataBox : dataBoxCharging}
@@ -115,6 +114,10 @@ const StyledDashboardProfilPopIn = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .icon {
+    color: ${({ theme }) => theme.primary};
+  }
 
   h3 {
     &.current {

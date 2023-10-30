@@ -71,6 +71,7 @@ const StyledDashboardStatistic = styled.section`
 
     .card {
       padding: 26px 30px;
+
       .card-header {
         display: flex;
         flex-direction: column;
@@ -86,15 +87,12 @@ const StyledDashboardStatistic = styled.section`
         display: flex;
         flex-direction: column;
         color: ${({ theme }) => theme.gray_second};
+
         .number {
           font-weight: bold;
           color: ${({ theme }) => theme.black};
         }
       }
     }
-  }
-
-  @media (min-width: 768px) {
-    justify-content: center;
   }
 `;

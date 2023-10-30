@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 import { dataNav } from "./data";
+
 import NavItem from "./nav-item";
-import { chivo } from "@/utils/font";
-import Text from "@/components/materials/text";
 import NavDropdown from "./nav-dropdown";
+import Text from "@/components/materials/text";
+
+import { chivo } from "@/utils/font";
+
 import { Window, WindowOutlined } from "@mui/icons-material";
-import { usePathname } from "next/navigation";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { SvgIconTypeMap } from "@mui/material";
 
@@ -14,7 +16,6 @@ export interface NavItemProp {
   children: React.ReactNode;
   icon_off: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
   icon_on: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
-
   path: string;
 }
 

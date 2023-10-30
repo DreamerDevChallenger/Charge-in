@@ -16,8 +16,11 @@ export default function DashboardProfilcard() {
 
 const StyledDashboardProfilInformation = styled.section`
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 32px;
+
+  @media (min-width: 1340px) {
+    justify-content: space-between;
+  }
 `;

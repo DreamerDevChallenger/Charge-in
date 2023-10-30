@@ -15,6 +15,8 @@ export const ProfilAvatar = ({ width, height }: PropProfilAvatar) => {
 };
 
 const StyledProfilAvatar = styled.div<PropProfilAvatar>`
+  cursor: pointer;
+
   border-radius: 100%;
   height: ${({ height }) => height}px;
   width: ${({ width }) => width}px;

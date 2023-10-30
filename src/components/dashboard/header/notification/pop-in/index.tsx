@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { clear } from "@/redux/reducers/notfication";
 import { ProfilAvatar } from "@/components/materials/profil";
 import { selectNotification } from "@/redux/selectors";
+import { Delete } from "@mui/icons-material";
 
 export default function NotificationPopIn() {
   const dispatch = useAppDispatch();
@@ -41,7 +42,7 @@ export default function NotificationPopIn() {
         <Text className="number-notifaction">
           {data.length} notification{data.length > 1 && "s"}
         </Text>
-        <Button onClick={() => dispatch(clear())}>
+        <Button onClick={() => dispatch(clear())} icon={Delete}>
           <Text>Tout effacer</Text>
         </Button>
       </div>
@@ -53,7 +54,7 @@ const StyledNotificationPopIn = styled.div`
   max-width: 400px;
 
   .pop-in-item {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid ${({ theme }) => theme.gray_third};
     padding: 20px 24px;
   }
 
@@ -67,10 +68,12 @@ const StyledNotificationPopIn = styled.div`
     align-items: center;
     gap: 16px;
     padding: 12px 0;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid ${({ theme }) => theme.gray_third};
+
     &:nth-child(1) {
       opacity: 1;
     }
+
     .pop-in-content {
       display: flex;
       flex-direction: column;

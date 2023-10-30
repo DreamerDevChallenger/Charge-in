@@ -133,6 +133,5 @@ const StyledNavDropdown = styled.div`
 
   .text {
     flex: 1;
-    overflow: hidden;
   }
 `;

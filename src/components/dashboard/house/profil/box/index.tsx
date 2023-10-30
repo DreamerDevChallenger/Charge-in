@@ -40,12 +40,13 @@ export default function DashboardProfilBox({
 }
 
 const StyledDashboardProfilBox = styled.div`
-  padding: 32px;
+  padding: 32px 16px;
   border-radius: 16px;
   border: 1px solid #dce6e5;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 60px;
 
@@ -60,6 +61,7 @@ const StyledDashboardProfilBox = styled.div`
     display: flex;
     flex: 1;
     align-items: center;
+    justify-content: center;
   }
 
   .box-price {
@@ -74,7 +76,9 @@ const StyledDashboardProfilBox = styled.div`
     box-shadow: 0px 4px 16px 0px rgba(164, 211, 208, 0.8);
   }
 
-  @media (min-width: 425px) {
+  @media (min-width: 500px) {
+    flex-direction: row;
+
     .box-price {
       font-size: 48px;
     }
