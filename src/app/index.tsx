@@ -43,7 +43,7 @@ const StyledApp = styled.div`
 
   &.dashboard {
     flex-direction: row;
-    .main-dashboard {
+    main {
       padding: 30px 20px 30px;
       gap: 30px;
       overflow: auto;
