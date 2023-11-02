@@ -36,6 +36,7 @@ export default function FormContent() {
         errors={errors}
         pattern={/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g}
         message="adresse@mail.com or adresse.city@mail.com"
+        name="L'Email"
       />
       <FormControl
         label="Mot de passe"
@@ -47,7 +48,8 @@ export default function FormContent() {
         pattern={
           /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/i
         }
-        message="Password1234@ or 1234passworD"
+        message="Password1234@ or 1234passworD$"
+        name="Le Mot De Passe"
       />
     </StyledFormContent>
   );

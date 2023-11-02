@@ -13,6 +13,7 @@ interface FormControlProps {
   errors: any;
   pattern: RegExp;
   message: string;
+  name: string;
 }
 
 export default function FormControl({
@@ -24,6 +25,7 @@ export default function FormControl({
   errors,
   pattern,
   message,
+  name,
 }: FormControlProps) {
   const [show, setShow] = useState(false);
 
@@ -44,11 +46,11 @@ export default function FormControl({
             {...register(htmlFor, {
               required: {
                 value: true,
-                message: `${nameInput} is required`,
+                message: `${name} est requis`,
               },
               pattern: {
                 value: pattern,
-                message: `${nameInput} must look like : ${message}`,
+                message: `${name} doit ressembler à : ${message}`,
               },
             })}
           />
