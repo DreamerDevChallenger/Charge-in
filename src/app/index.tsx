@@ -10,7 +10,7 @@ import { combineTheme } from "@/utils/theme";
 export default function App({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const conditionalPath = pathname === "/login" || pathname === "/";
+  const conditionalPath = !pathname.includes("/dashboard");
   return (
     <StyledComponentsRegistry>
       <ThemeProvider theme={combineTheme}>

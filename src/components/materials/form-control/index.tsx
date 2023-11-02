@@ -6,50 +6,63 @@ import { VisibilityOff, VisibilityOutlined } from "@mui/icons-material/";
 
 interface FormControlProps {
   label: string;
-  isPassword?: boolean;
   htmlFor: string;
   placeholder: string;
+  type: "password" | "text";
+  register: Function;
+  errors: any;
+  pattern: RegExp;
+  message: string;
 }
 
 export default function FormControl({
   label,
-  isPassword,
   htmlFor,
   placeholder,
+  type,
+  register,
+  errors,
+  pattern,
+  message,
 }: FormControlProps) {
   const [show, setShow] = useState(false);
+
+  const nameInput = `${htmlFor.replace(/^./, (str) => str.toUpperCase())}`;
 
   return (
     <StyledFormControl className={chivo.className}>
       <label htmlFor={htmlFor}>{label}</label>
 
-      <div className="input-container">
-        {isPassword ? (
-          <>
-            <input
-              type={show ? "text" : "password"}
-              id={htmlFor}
-              className={chivo.className}
-              placeholder={placeholder}
-              autoComplete="current-password"
-              required
-            />
+      <div className={`${errors[htmlFor] ? "error " : ""}input-container`}>
+        <>
+          <input
+            type={type === "password" ? (show ? "text" : "password") : type}
+            id={htmlFor}
+            className={`${chivo.className}`}
+            placeholder={placeholder}
+            autoComplete="current-password"
+            {...register(htmlFor, {
+              required: {
+                value: true,
+                message: `${nameInput} is required`,
+              },
+              pattern: {
+                value: pattern,
+                message: `${nameInput} must look like : ${message}`,
+              },
+            })}
+          />
+
+          {type === "password" && (
             <div className="icon-container" onClick={() => setShow(!show)}>
               {show ? <VisibilityOff /> : <VisibilityOutlined />}
             </div>
-          </>
-        ) : (
-          <input
-            type="text"
-            id={htmlFor}
-            className={chivo.className}
-            placeholder={placeholder}
-            autoComplete="username"
-            required
-          />
-        )}
+          )}
+        </>
       </div>
-      {/* <div className="error-message">error</div> */}
+      {errors[htmlFor] && (
+        <div className="error-message">{errors[htmlFor].message}</div>
+      )}
     </StyledFormControl>
   );
 }
@@ -63,12 +76,21 @@ const StyledFormControl = styled.div`
     font-size: 18px;
   }
 
+  .error-message {
+    color: ${({ theme }) => theme.error};
+  }
+
   .input-container {
     position: relative;
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.1);
     border: 1px solid ${({ theme }) => theme.border};
     border-radius: 4px;
     padding: 5px 9px;
+
+    &.error {
+      box-shadow: 0px 0px 4px 0px ${({ theme }) => theme.error};
+      border: 1px solid ${({ theme }) => theme.error};
+    }
 
     input {
       width: 100%;
